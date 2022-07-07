@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Scheme入门 | Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SchemeSymbol 是数据类型 但是创建需要 12(quote xyz)&#x3D;&gt;  xyz  全局变量 1(define xyz 9)  字符 1\#a  bool 12#t#f 1(set! xyz #\c) 向量 1(vector 0 1 2 3 4) 点对 123&amp;#x27;(1 . #t) &#x3D;&gt;  (1 . #t)(1 . #t)  --&gt;ERROR!!! 点对形成的递">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scheme入门">
+<meta property="og:url" content="https://cactusballl.github.io/2021/10/17/Scheme%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="SchemeSymbol 是数据类型 但是创建需要 12(quote xyz)&#x3D;&gt;  xyz  全局变量 1(define xyz 9)  字符 1\#a  bool 12#t#f 1(set! xyz #\c) 向量 1(vector 0 1 2 3 4) 点对 123&amp;#x27;(1 . #t) &#x3D;&gt;  (1 . #t)(1 . #t)  --&gt;ERROR!!! 点对形成的递">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-17T12:02:13.000Z">
+<meta property="article:modified_time" content="2021-10-17T14:24:52.159Z">
+<meta property="article:author" content="cactus ball">
+<meta property="article:tag" content="Functional Language">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Scheme入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/17/Scheme%E5%85%A5%E9%97%A8/" class="article-date">
+  	<time datetime="2021-10-17T12:02:13.000Z" itemprop="datePublished">2021-10-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Scheme入门
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Language/" rel="tag">Functional Language</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h1><p>Symbol 是数据类型</p>
+<p>但是创建需要</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">quote</span></span> xyz)</span><br><span class="line">=&gt;  xyz</span><br></pre></td></tr></table></figure>
+
+<p>全局变量</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> xyz <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>字符</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\#a</span><br></pre></td></tr></table></figure>
+
+<p>bool</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#t</span><br><span class="line">#f</span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">set!</span></span> xyz <span class="literal">#\c</span>)</span><br></pre></td></tr></table></figure>
+<p>向量</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">vector</span></span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>点对</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;(<span class="number">1</span> . <span class="literal">#t</span>) =&gt;  (<span class="name">1</span> . <span class="literal">#t</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">1</span> . <span class="literal">#t</span>)  --&gt;ERROR!!!</span><br></pre></td></tr></table></figure>
+<p>点对形成的递归结构就是list</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">+</span></span> x <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> display3</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (arg1 arg2 arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg1)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg2)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg3)</span><br><span class="line">      (<span class="name"><span class="builtin-name">newline</span></span>))))</span><br></pre></td></tr></table></figure>
+
+<p>在Scheme中，lambda的语句体都是隐式的begin代码结构。因此，display3语句体中的begin不是必须的，不写时也不会有什么影响。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> display3</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (arg1 arg2 arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg1)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg2)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">newline</span></span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><h3 id="let-amp-let-amp-letrec"><a href="#let-amp-let-amp-letrec" class="headerlink" title="let &amp; let* &amp; letrec"></a>let &amp; let* &amp; letrec</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">x</span> <span class="number">1</span>)</span><br><span class="line">      (<span class="name">y</span> <span class="number">2</span>)</span><br><span class="line">      (<span class="name">z</span> <span class="number">3</span>))</span><br><span class="line">  (<span class="name"><span class="builtin-name">list</span></span> x y z))</span><br><span class="line">=&gt;  (<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">let*</span></span> ((<span class="name">x</span> <span class="number">1</span>)</span><br><span class="line">       (<span class="name">y</span> x))</span><br><span class="line">  (<span class="name"><span class="builtin-name">+</span></span> x y))</span><br><span class="line">=&gt;  <span class="number">2</span></span><br><span class="line">(<span class="name"><span class="builtin-name">letrec</span></span> ((<span class="name">local-even?</span> (<span class="name"><span class="builtin-name">lambda</span></span> (n)</span><br><span class="line">                        (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> n <span class="number">0</span>) <span class="literal">#t</span></span><br><span class="line">                            (<span class="name">local-odd?</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">1</span>)))))</span><br><span class="line">         (<span class="name">local-odd?</span> (<span class="name"><span class="builtin-name">lambda</span></span> (n)</span><br><span class="line">                       (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> n <span class="number">0</span>) <span class="literal">#f</span></span><br><span class="line">                           (<span class="name">local-even?</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">1</span>))))))</span><br><span class="line"> (<span class="name"><span class="builtin-name">list</span></span> (<span class="name">local-even?</span> <span class="number">23</span>) (<span class="name">local-odd?</span> <span class="number">23</span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><p>文本替换</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">apply</span></span></span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (test . branch)</span><br><span class="line">    (<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">&#x27;if</span> test</span><br><span class="line">      (<span class="name"><span class="builtin-name">cons</span></span> <span class="symbol">&#x27;begin</span> branch)))</span><br><span class="line">  &#x27;((&lt; (pressure tube) <span class="number">60</span>)</span><br><span class="line">      (open-valve tube)</span><br><span class="line">      (attach floor-pump tube)</span><br><span class="line">      (depress floor-pump <span class="number">5</span>)</span><br><span class="line">      (detach floor-pump tube)</span><br><span class="line">      (close-valve tube)))</span><br></pre></td></tr></table></figure>
+
+<p>转换产生</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&lt;</span></span> (<span class="name">pressure</span> tube) <span class="number">60</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">      (<span class="name">open-valve</span> tube)</span><br><span class="line">      (<span class="name">attach</span> floor-pump tube)</span><br><span class="line">      (<span class="name">depress</span> floor-pump <span class="number">5</span>)</span><br><span class="line">      (<span class="name">detach</span> floor-pump tube)</span><br><span class="line">      (<span class="name">close-valve</span> tube)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defstruct</span> tree height girth age leaf-shape leaf-color)</span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> coconut </span><br><span class="line">  (<span class="name">make-tree</span> <span class="symbol">&#x27;height</span> <span class="number">30</span></span><br><span class="line">             <span class="symbol">&#x27;leaf-shape</span> <span class="symbol">&#x27;frond</span></span><br><span class="line">             <span class="symbol">&#x27;age</span> <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<p><code>defstruct</code>也是宏</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/19/CO-someVerilog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          CO-someVerilog
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/16/LearnYouHaskell/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LearnYouHaskell</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

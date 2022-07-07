@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Rust-more | Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Rust 更多特性宏(macro_rule!)过程宏要定义一个函数操作AST，这里主要看声明宏。 12345678910macro_rules! add&amp;#123; &#x2F;&#x2F; macth like arm for macro    ($a:expr,$b:expr)&#x3D;&gt;&amp;#123; &#x2F;&#x2F; macro expand to this code        &amp;#123;&#x2F;&#x2F; $a and $b wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust-more">
+<meta property="og:url" content="https://cactusballl.github.io/2021/10/24/Rust-more/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="Rust 更多特性宏(macro_rule!)过程宏要定义一个函数操作AST，这里主要看声明宏。 12345678910macro_rules! add&amp;#123; &#x2F;&#x2F; macth like arm for macro    ($a:expr,$b:expr)&#x3D;&gt;&amp;#123; &#x2F;&#x2F; macro expand to this code        &amp;#123;&#x2F;&#x2F; $a and $b wi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-23T17:28:32.000Z">
+<meta property="article:modified_time" content="2021-10-26T13:33:17.576Z">
+<meta property="article:author" content="cactus ball">
+<meta property="article:tag" content="rust">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Rust-more" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/24/Rust-more/" class="article-date">
+  	<time datetime="2021-10-23T17:28:32.000Z" itemprop="datePublished">2021-10-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Rust-more
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rust/" rel="tag">rust</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Rust-更多特性"><a href="#Rust-更多特性" class="headerlink" title="Rust 更多特性"></a>Rust 更多特性</h1><h2 id="宏-macro-rule"><a href="#宏-macro-rule" class="headerlink" title="宏(macro_rule!)"></a>宏(macro_rule!)</h2><p>过程宏要定义一个函数操作AST，这里主要看声明宏。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">macro_rules!</span> add&#123;</span><br><span class="line"> <span class="comment">// macth like arm for macro</span></span><br><span class="line">    ($a:expr,$b:expr)=&gt;&#123;</span><br><span class="line"> <span class="comment">// macro expand to this code</span></span><br><span class="line">        &#123;</span><br><span class="line"><span class="comment">// $a and $b will be templated using the value/variable provided to macro</span></span><br><span class="line">            $a+$b</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>expr是匹配的token</p>
+<blockquote>
+<p>item ——一个项（item），像一个函数，结构体，模块等。</p>
+</blockquote>
+<blockquote>
+<p>block ——一个块 （block）（即一个语句块或一个表达式，由花括号所包围）</p>
+</blockquote>
+<blockquote>
+<p>stmt —— 一个语句（statement）</p>
+</blockquote>
+<blockquote>
+<p>pat ——一个模式（pattern）</p>
+</blockquote>
+<blockquote>
+<p>expr —— 一个表达式（expression）</p>
+</blockquote>
+<blockquote>
+<p>ty ——一个类型（type）</p>
+</blockquote>
+<blockquote>
+<p>ident—— 一个标识符（indentfier）</p>
+</blockquote>
+<blockquote>
+<p>path —— 一个路径（path）（例如，foo，::std::mem::replace，transmute::&lt;_, int&gt;，…）meta —— 一个元数据项；位于#[…]和#![…]属性</p>
+</blockquote>
+<blockquote>
+<p>tt——一个词法树</p>
+</blockquote>
+<blockquote>
+<p>vis——一个可能为空的Visibility限定词</p>
+</blockquote>
+<p>本质是模式匹配和替换，并且可以递归。</p>
+<h3 id="宏的作用域"><a href="#宏的作用域" class="headerlink" title="宏的作用域"></a>宏的作用域</h3><p>默认文本作用域，基于定义顺序，后定义的会替换先定义的。类似let局部变量</p>
+<p><code>#[macro_use]</code>:</p>
+<ul>
+<li>让宏的作用域不会终结于被定义的模块。</li>
+<li>用于extern crate: 让宏出现在顶层模块。<br><code>#[macro_export]</code>:</li>
+<li>让宏定义在顶层模块，可以路径引用。 </li>
+</ul>
+<h2 id="编译feature"><a href="#编译feature" class="headerlink" title="编译feature"></a>编译feature</h2><p>可以指定要用这个feature要求其他feature，也可以要求其他其他crate</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[dependencies]</span></span><br><span class="line"><span class="attr">ravif</span> = &#123; version = <span class="string">&quot;0.6.3&quot;</span>, optional = <span class="literal">true</span> &#125;</span><br><span class="line"><span class="attr">rgb</span> = &#123; version = <span class="string">&quot;0.8.25&quot;</span>, optional = <span class="literal">true</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[features]</span></span><br><span class="line"><span class="attr">avif</span> = [<span class="string">&quot;ravif&quot;</span>, <span class="string">&quot;rgb&quot;</span>]</span><br></pre></td></tr></table></figure>
+<p>条件编译指示</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#[cfg(feature = <span class="meta-string">&quot;webp&quot;</span>)]</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">mod</span> webp;</span><br></pre></td></tr></table></figure>
+<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::thread;</span><br><span class="line"><span class="keyword">use</span> std::time::Duration;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> handle = thread::spawn(|| &#123;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">10</span> &#123;</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;hi number &#123;&#125; from the spawned thread!&quot;</span>, i);</span><br><span class="line">            thread::sleep(Duration::from_millis(<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">5</span> &#123;</span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;hi number &#123;&#125; from the main thread!&quot;</span>, i);</span><br><span class="line">        thread::sleep(Duration::from_millis(<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handle.join().unwrap();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来自the book</p>
+<p>推荐使用管道，而不是共享内存。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (tx, rx) = mpsc::channel();</span><br></pre></td></tr></table></figure>
+<p>多生产者单消费者模型</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> counter = Arc::new(Mutex::new(<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
+<p>锁<br>类似线程安全的</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> counter = Rc::new(RefCell::new(<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Send 标记 trait 表明类型的所有权可以在线程间传递</li>
+<li>Sync 标记 trait 表明一个实现了 Sync 的类型可以安全的在多个线程中拥有其值的引用</li>
+<li>如果 &amp;T（T 的引用）是 Send 的话 T 就是 Sync 的</li>
+</ul>
+<h2 id="rustdoc"><a href="#rustdoc" class="headerlink" title="rustdoc"></a>rustdoc</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cargo doc</span><br><span class="line">rustdoc</span><br><span class="line">rustdoc README.md <span class="comment"># 可以处理markdown</span></span><br></pre></td></tr></table></figure>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li><code>///</code>文档注释紧跟其后的item</li>
+<li><code>//!</code>文档注释所在的item，一般用于注释整个crate</li>
+</ul>
+<h3 id="rustdoc-book-的建议"><a href="#rustdoc-book-的建议" class="headerlink" title="rustdoc book 的建议"></a>rustdoc book 的建议</h3><blockquote>
+<p>[short sentence explaining what it is]</p>
+</blockquote>
+<blockquote>
+<p>[more detailed explanation]</p>
+</blockquote>
+<blockquote>
+<p>[at least one code example that users can copy/paste to try it]</p>
+</blockquote>
+<blockquote>
+<p>[even more advanced explanations if necessary]</p>
+</blockquote>
+<p>文档注释可以写markdown。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#![warn(missing_docs)]</span> </span><br></pre></td></tr></table></figure>
+<p>编译文档时发出警告。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#[doc(hidden)]</span></span><br></pre></td></tr></table></figure>
+<p>隐藏item</p>
+<h3 id="文档测试"><a href="#文档测试" class="headerlink" title="文档测试"></a>文档测试</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Example</span></span><br><span class="line"><span class="comment">/// ```rust</span></span><br><span class="line"><span class="comment">/// # main() -&gt; Result&lt;(), std::num::ParseIntError&gt; &#123;</span></span><br><span class="line"><span class="comment">/// let fortytwo = &quot;42&quot;.parse::&lt;u32&gt;()?;</span></span><br><span class="line"><span class="comment">/// println!(&quot;&#123;&#125; + 10 = &#123;&#125;&quot;, fortytwo, fortytwo+10);</span></span><br><span class="line"><span class="comment">/// #     Ok(())</span></span><br><span class="line"><span class="comment">/// # &#125;</span></span><br><span class="line"><span class="comment">/// ```</span></span><br></pre></td></tr></table></figure>
+
+<p>运行文档测试时会把example包裹在一个空的main函数里，但是签名不正确可能引起错误，所以有以上语法。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/28/CO-P2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          CO-P2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/24/Rustlib-bracket-lib/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Rustlib-bracket-lib</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

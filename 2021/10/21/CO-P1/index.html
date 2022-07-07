@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CO-P1 | Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CO-P1verilog 算术右移已知正常工作 1$signed(a) &gt;&gt;&gt; b; 符号数处理在对无符号数和符号数同时操作时，Verilog 会自动地做数据类型匹配，将符号数向无符号数转化。 对于移位运算符，其右侧的操作数总是被视为无符号数，并且不会对运算结果的符号性产生任何影响。结果的符号由运算符左侧的操作数和表达式的其余部分共同决定。 上机评测注意评测机的testbench">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CO-P1">
+<meta property="og:url" content="https://cactusballl.github.io/2021/10/21/CO-P1/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="CO-P1verilog 算术右移已知正常工作 1$signed(a) &gt;&gt;&gt; b; 符号数处理在对无符号数和符号数同时操作时，Verilog 会自动地做数据类型匹配，将符号数向无符号数转化。 对于移位运算符，其右侧的操作数总是被视为无符号数，并且不会对运算结果的符号性产生任何影响。结果的符号由运算符左侧的操作数和表达式的其余部分共同决定。 上机评测注意评测机的testbench">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-21T02:20:39.000Z">
+<meta property="article:modified_time" content="2021-10-21T15:16:11.138Z">
+<meta property="article:author" content="cactus ball">
+<meta property="article:tag" content="BUAA-CO">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-CO-P1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/21/CO-P1/" class="article-date">
+  	<time datetime="2021-10-21T02:20:39.000Z" itemprop="datePublished">2021-10-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CO-P1
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BUAA-CO/" rel="tag">BUAA-CO</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CO-P1"><a href="#CO-P1" class="headerlink" title="CO-P1"></a>CO-P1</h1><h2 id="verilog-算术右移"><a href="#verilog-算术右移" class="headerlink" title="verilog 算术右移"></a>verilog 算术右移</h2><p>已知正常工作</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$signed</span>(a) &gt;&gt;&gt; b;</span><br></pre></td></tr></table></figure>
+<h3 id="符号数处理"><a href="#符号数处理" class="headerlink" title="符号数处理"></a>符号数处理</h3><p>在对无符号数和符号数同时操作时，Verilog 会自动地做数据类型匹配，将符号数向无符号数转化。</p>
+<p>对于移位运算符，其右侧的操作数总是被视为无符号数，并且不会对运算结果的符号性产生任何影响。结果的符号由运算符左侧的操作数和表达式的其余部分共同决定。</p>
+<h2 id="上机评测注意"><a href="#上机评测注意" class="headerlink" title="上机评测注意"></a>上机评测注意</h2><p>评测机的testbench可能不帮你初始化，尽管感觉很不合理，但是大概得写initial块。</p>
+<h2 id="状态机设计"><a href="#状态机设计" class="headerlink" title="状态机设计"></a>状态机设计</h2><p>明确的状态定义，对于字符匹配，最长匹配后缀（？）</p>
+<h2 id="符号性"><a href="#符号性" class="headerlink" title="符号性"></a>符号性</h2><blockquote>
+<p> two  system  functions  shall  be  used  to  handle  type  casting  on<br>expressions:  $signed()  and  $unsigned().  These  functions  shall  evaluate  the  input  expression  and  return  a<br>value with the same size and value of the input expression and the type defined by the functio</p>
+</blockquote>
+<ul>
+<li>对于三目运算符，后两个操作数要都是signed表达式才signed。</li>
+<li>signedness不由左值决定。</li>
+</ul>
+<h2 id="基于字符串生成测试样例和对应tb"><a href="#基于字符串生成测试样例和对应tb" class="headerlink" title="基于字符串生成测试样例和对应tb"></a>基于字符串生成测试样例和对应tb</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">S=<span class="string">&quot;begin end begin Endd end&quot;</span></span><br><span class="line"><span class="keyword">for</span> (( i = 0; i &lt; <span class="variable">$&#123;#S&#125;</span>; i++ )); <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;str[<span class="variable">$i</span>] = \&quot;<span class="variable">$&#123;S:i:1&#125;</span>\&quot;;&quot;</span> &gt;&gt; out.txt</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>其实可以用python写（课程虚拟机有），毕竟bash的语法太混沌邪恶了。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>;str[i] != <span class="string">&quot;\0&quot;</span>;i = i + <span class="number">1</span>)<span class="keyword">begin</span></span><br><span class="line">    in = str[i];</span><br><span class="line">    #<span class="number">10</span>;</span><br><span class="line"><span class="keyword">end</span> </span><br></pre></td></tr></table></figure>
+
+<h2 id="常用shell"><a href="#常用shell" class="headerlink" title="常用shell"></a>常用shell</h2><p>上机时先打进去以实现快速刷新。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># runall.sh</span></span><br><span class="line">./compile.sh</span><br><span class="line">./run.sh</span><br><span class="line">./verdi.sh &amp; <span class="comment">#后台任务，防止阻塞当前console</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># reload.sh</span></span><br><span class="line">./compile.sh</span><br><span class="line">./run.sh</span><br></pre></td></tr></table></figure>
+
+<p>VCS，Verdi常用快捷键：</p>
+<ul>
+<li>Shift+L 重新载入</li>
+<li>Ctrl+4 显示信号波形</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/23/SICP-0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          SICP-0
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/19/CO-someVerilog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CO-someVerilog</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

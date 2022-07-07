@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>craft-interpreter | Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Where an expression’s main job is to produce a value, a statement’s job is to produce an effect.   it’s good engineering practice to separate the code that generates the errors from the code that rep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="craft-interpreter">
+<meta property="og:url" content="https://cactusballl.github.io/2021/12/06/craft-interpreter/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="Where an expression’s main job is to produce a value, a statement’s job is to produce an effect.   it’s good engineering practice to separate the code that generates the errors from the code that rep">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-06T10:50:44.000Z">
+<meta property="article:modified_time" content="2021-12-16T16:58:44.037Z">
+<meta property="article:author" content="cactus ball">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-craft-interpreter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/12/06/craft-interpreter/" class="article-date">
+  	<time datetime="2021-12-06T10:50:44.000Z" itemprop="datePublished">2021-12-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      craft-interpreter
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Where an expression’s main job is to produce a value, a statement’s job is to produce an effect.</p>
+</blockquote>
+<blockquote>
+<p>it’s good engineering practice to separate the code that generates the errors from the code that reports the M</p>
+</blockquote>
+<blockquote>
+<p>This is called lookahead. Since it only looks at the current unconsumed character, we have one character of lookahead. The smaller this number is, generally, the faster the scanner runs. </p>
+</blockquote>
+<h2 id="过程，方法，函数"><a href="#过程，方法，函数" class="headerlink" title="过程，方法，函数"></a>过程，方法，函数</h2><table>
+<thead>
+<tr>
+<th>type</th>
+<th>parse()</th>
+<th>print()</th>
+<th>add()</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>integer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>OOP倾向于每行分开，FP倾向于每列分开。</p>
+<blockquote>
+<p>Each style has a certain “grain” to it. That’s what the paradigm name literally says—an object-oriented language wants you to <em>orient</em> your code along the rows of types. A functional language instead encourages you to lump each column’s worth of code together into a <em>function</em>.</p>
+</blockquote>
+<h2 id="访问者模式（visitor-pattern）"><a href="#访问者模式（visitor-pattern）" class="headerlink" title="访问者模式（visitor pattern）"></a>访问者模式（visitor pattern）</h2><p>用OOP的多态模仿FP的“加列”操作。</p>
+<blockquote>
+<p>Instead of baking precedence right into the grammar rules, some parser generators let you keep the same ambiguous-but-simple grammar and then add in a little explicit operator precedence metadata on the side in order to disambiguate</p>
+</blockquote>
+<h2 id="使用语法-CFG-实现优先级"><a href="#使用语法-CFG-实现优先级" class="headerlink" title="使用语法(CFG)实现优先级"></a>使用语法(CFG)实现优先级</h2><p>高优先级靠近终结符。</p>
+<h2 id="panic-mode"><a href="#panic-mode" class="headerlink" title="panic mode"></a>panic mode</h2><p>以语句结束作为恢复点是常见的，丢弃token。</p>
+<h2 id="环境与作用域"><a href="#环境与作用域" class="headerlink" title="环境与作用域"></a>环境与作用域</h2><blockquote>
+<p>Scope and environments are close cousins. The former is the theoretical concept, and the latter is the machinery that implements it.</p>
+</blockquote>
+<h2 id="resolve-pass"><a href="#resolve-pass" class="headerlink" title="resolve pass"></a>resolve pass</h2><p>静态语义分析，作用域规则是静态的，所以可以静态分析（参考Lua的UpValue的实现，之前一直看不懂）。</p>
+<h2 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h2><blockquote>
+<p>There are three broad paths to object-oriented programming: classes, <a target="_blank" rel="noopener" href="http://gameprogrammingpatterns.com/prototype.html">prototypes</a>, and <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiple_dispatch">multimethods</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/11/14/CO-Pipeline/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CO-Pipeline</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

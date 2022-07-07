@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SICP-0 | Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="计算机程序的构造和解释求值规则Lisp的语法：求值规则可以描述成一个简单的通用规则和一组针对不多的特殊形式的专门规则。 代换模型：   完全展开后规约，正则序  先求值参数后应用：应用序（使用“环境”）   块结构来自Algol 60 过程递归，迭代计算过程。 线性递归，线性迭代（语法上可能是递归的（尾递归优化）） 概率方法费马检查质数，概率正确。Miller-Rabin检查是其变形，不会有失效的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICP-0">
+<meta property="og:url" content="https://cactusballl.github.io/2021/10/23/SICP-0/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="计算机程序的构造和解释求值规则Lisp的语法：求值规则可以描述成一个简单的通用规则和一组针对不多的特殊形式的专门规则。 代换模型：   完全展开后规约，正则序  先求值参数后应用：应用序（使用“环境”）   块结构来自Algol 60 过程递归，迭代计算过程。 线性递归，线性迭代（语法上可能是递归的（尾递归优化）） 概率方法费马检查质数，概率正确。Miller-Rabin检查是其变形，不会有失效的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-23T02:00:57.000Z">
+<meta property="article:modified_time" content="2021-11-02T11:57:46.376Z">
+<meta property="article:author" content="cactus ball">
+<meta property="article:tag" content="SICP">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-SICP-0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/23/SICP-0/" class="article-date">
+  	<time datetime="2021-10-23T02:00:57.000Z" itemprop="datePublished">2021-10-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SICP-0
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SICP/" rel="tag">SICP</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机程序的构造和解释"><a href="#计算机程序的构造和解释" class="headerlink" title="计算机程序的构造和解释"></a>计算机程序的构造和解释</h1><h2 id="求值规则"><a href="#求值规则" class="headerlink" title="求值规则"></a>求值规则</h2><p>Lisp的语法：求值规则可以描述成一个简单的通用规则和一组针对不多的特殊形式的专门规则。</p>
+<p>代换模型： </p>
+<ul>
+<li><p>完全展开后规约，正则序</p>
+</li>
+<li><p>先求值参数后应用：应用序（使用“环境”）</p>
+</li>
+</ul>
+<h2 id="块结构"><a href="#块结构" class="headerlink" title="块结构"></a>块结构</h2><p>来自Algol 60</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>递归，迭代计算过程。 线性递归，线性迭代（语法上可能是递归的（尾递归优化））</p>
+<h2 id="概率方法"><a href="#概率方法" class="headerlink" title="概率方法"></a>概率方法</h2><p>费马检查质数，概率正确。Miller-Rabin检查是其变形，不会有失效的例外。</p>
+<p>存在Carmichael数的例外。</p>
+<p>（数论，学不懂）</p>
+<p>存在使得出错机会达到任意小的检查算法，称为概率算法。</p>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><ul>
+<li><p>过程作为参数，抽取公共模式。</p>
+</li>
+<li><p>lambda匿名函数。</p>
+</li>
+</ul>
+<h2 id="let-可用lambda实现"><a href="#let-可用lambda实现" class="headerlink" title="let(可用lambda实现)"></a>let(可用lambda实现)</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">a</span> <span class="number">3</span>)</span><br><span class="line">      (<span class="name">b</span> <span class="number">4</span>))</span><br><span class="line">    (<span class="name"><span class="builtin-name">+</span></span> a b)</span><br><span class="line">)</span><br><span class="line"><span class="comment">;等价于</span></span><br><span class="line">((<span class="name"><span class="builtin-name">lambda</span></span> (a b) (<span class="name"><span class="builtin-name">+</span></span> a b)) <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一级状态（一等公民）（翻译很怪）"><a href="#第一级状态（一等公民）（翻译很怪）" class="headerlink" title="第一级状态（一等公民）（翻译很怪）"></a>第一级状态（一等公民）（翻译很怪）</h2><blockquote>
+<p>函数是一等公民<br>即指可以赋值，传递等。</p>
+</blockquote>
+<h2 id="数据抽象"><a href="#数据抽象" class="headerlink" title="数据抽象"></a>数据抽象</h2><p>其实数据和过程并不是界限分明的。</p>
+<h3 id="序对"><a href="#序对" class="headerlink" title="序对"></a>序对</h3><p>Lisp的表</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> x (<span class="name"><span class="builtin-name">cons</span></span> <span class="number">1</span> <span class="number">2</span>))</span><br><span class="line">(<span class="name"><span class="builtin-name">car</span></span> x)</span><br><span class="line">(<span class="name"><span class="builtin-name">cdr</span></span> x)</span><br><span class="line">(<span class="name"><span class="builtin-name">cons</span></span> <span class="number">1</span> (<span class="name"><span class="builtin-name">cons</span></span> <span class="number">2</span> (<span class="name"><span class="builtin-name">cons</span></span> <span class="number">3</span> (<span class="name"><span class="builtin-name">cons</span></span> <span class="number">4</span> <span class="number">5</span>))))</span><br></pre></td></tr></table></figure>
+
+<h3 id="抽象屏障"><a href="#抽象屏障" class="headerlink" title="抽象屏障"></a>抽象屏障</h3><p>封装</p>
+<p>数据可以作为过程表示 —— 消息传递风格</p>
+<p>过程作为数据 —— 丘奇数</p>
+<p>闭包 —— 一集元素在某个操作（运算）下封闭。</p>
+<h3 id="层次性数据和闭包性质"><a href="#层次性数据和闭包性质" class="headerlink" title="层次性数据和闭包性质"></a>层次性数据和闭包性质</h3><p>map &amp; filter(reduce)</p>
+<p>高阶操作 —— 高阶函数 —— 操作函数的函数</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">&#x27;a</span> <span class="symbol">&#x27;b</span>)</span><br><span class="line"><span class="comment">; -&gt; (a b)</span></span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">car</span></span> &#x27;(a b c))</span><br><span class="line"><span class="comment">; -&gt; a</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="类型标志"><a href="#类型标志" class="headerlink" title="类型标志"></a>类型标志</h3><p>最小允诺：不确定底层表示，保持上层接口一致。</p>
+<p>函数派发（依据类型），说法完全和Java相反。（据说Java系的OO非常的不原教旨）。</p>
+<h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>使用表格 —— 数据导向</p>
+<p>这个表格让人想到脚本语言（Lua，Python）等用HashTable实现的函数表，和C++的虚表。</p>
+<p>消息传递 —— 数据对象以“消息”的方式接收所需操作的名字。（这显然和“调用方法”说法不同）。</p>
+<p>通用算术运算（通过tag对复数，实数实现统一的运算，类似多态）</p>
+<p>类型强制转换也可以存在一张类似上面提到的函数派发所用的表格。</p>
+<p><strong>类型的层次结构</strong></p>
+<p>继承，树形结构。</p>
+<p>继承还有可能是网状结构（大多数都是）</p>
+<p>=&gt; trait,多继承,interface,abstract class…</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/24/Rustlib-bracket-lib/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Rustlib-bracket-lib
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/21/CO-P1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CO-P1</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

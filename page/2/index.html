@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cactus Ball</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Cactus Ball">
+<meta property="og:url" content="https://cactusballl.github.io/page/2/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="cactus ball">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">cactus ball</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-CO-someVerilog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/19/CO-someVerilog/" class="article-date">
+  	<time datetime="2021-10-19T13:04:00.000Z" itemprop="datePublished">2021-10-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/19/CO-someVerilog/">
+        CO-someVerilog
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一些Verilog"><a href="#一些Verilog" class="headerlink" title="一些Verilog"></a>一些Verilog</h1><h2 id="always"><a href="#always" class="headerlink" title="always"></a>always</h2><p>always组合逻辑</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*)</span><br><span class="line"><span class="keyword">always_comb</span></span><br></pre></td></tr></table></figure>
+<p>always块的左值必须是reg，assign的左值必须是wire，虽然和最后综合的电路没有关系。</p>
+<h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><p>穷尽所有情况以防止生成锁。</p>
+<h2 id="casez"><a href="#casez" class="headerlink" title="casez"></a>casez</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">casez</span> (in[<span class="number">3</span>:<span class="number">0</span>])</span><br><span class="line">        <span class="number">4&#x27;bzzz1</span>: out = <span class="number">0</span>;   <span class="comment">// in[3:1] can be anything</span></span><br><span class="line">        <span class="number">4&#x27;bzz1z</span>: out = <span class="number">1</span>;</span><br><span class="line">        <span class="number">4&#x27;bz1zz</span>: out = <span class="number">2</span>;</span><br><span class="line">        <span class="number">4&#x27;b1zzz</span>: out = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">default</span>: out = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>z表示不关心的情况，case语句顺序检查每一个条件（生成真值表并分析产生组合逻辑）</p>
+<p>上面是优先编码器。</p>
+<p>类似还有casex 不关心x和z。</p>
+<h2 id="起始时间和结束时间"><a href="#起始时间和结束时间" class="headerlink" title="起始时间和结束时间"></a>起始时间和结束时间</h2><p>对于顺序块，起始时间和结束时间分别对应第一条语句和最后一条语句开始和结束执行的时间。</p>
+<p>对于并行块，起始时间对块内所有语句相同，结束时间是按时间排序在最后的语句执行结束的时间。</p>
+<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">genvar</span> i;</span><br><span class="line"><span class="keyword">generate</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i = i + <span class="number">1</span>) <span class="keyword">begin</span>: xorloop</span><br><span class="line">        <span class="keyword">xor</span> gl(out[i],i0[i],i1[i]);</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>生成的门可以用形如<code>xorloop[0].gl</code>引用。</p>
+<h2 id="命名块"><a href="#命名块" class="headerlink" title="命名块"></a>命名块</h2><p>用<code>disable block;</code>相当于<code>break block</code>跳出。</p>
+<h2 id="异步复位"><a href="#异步复位" class="headerlink" title="异步复位"></a>异步复位</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> Clock <span class="keyword">or</span> <span class="keyword">negedge</span> Reset)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BUAA-CO/" rel="tag">BUAA-CO</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Scheme入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/17/Scheme%E5%85%A5%E9%97%A8/" class="article-date">
+  	<time datetime="2021-10-17T12:02:13.000Z" itemprop="datePublished">2021-10-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/17/Scheme%E5%85%A5%E9%97%A8/">
+        Scheme入门
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h1><p>Symbol 是数据类型</p>
+<p>但是创建需要</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">quote</span></span> xyz)</span><br><span class="line">=&gt;  xyz</span><br></pre></td></tr></table></figure>
+
+<p>全局变量</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> xyz <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>字符</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\#a</span><br></pre></td></tr></table></figure>
+
+<p>bool</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#t</span><br><span class="line">#f</span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">set!</span></span> xyz <span class="literal">#\c</span>)</span><br></pre></td></tr></table></figure>
+<p>向量</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">vector</span></span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>点对</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;(<span class="number">1</span> . <span class="literal">#t</span>) =&gt;  (<span class="name">1</span> . <span class="literal">#t</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name">1</span> . <span class="literal">#t</span>)  --&gt;ERROR!!!</span><br></pre></td></tr></table></figure>
+<p>点对形成的递归结构就是list</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">+</span></span> x <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> display3</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (arg1 arg2 arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg1)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg2)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">      (<span class="name"><span class="builtin-name">display</span></span> arg3)</span><br><span class="line">      (<span class="name"><span class="builtin-name">newline</span></span>))))</span><br></pre></td></tr></table></figure>
+
+<p>在Scheme中，lambda的语句体都是隐式的begin代码结构。因此，display3语句体中的begin不是必须的，不写时也不会有什么影响。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> display3</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (arg1 arg2 arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg1)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg2)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> <span class="string">&quot; &quot;</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">display</span></span> arg3)</span><br><span class="line">    (<span class="name"><span class="builtin-name">newline</span></span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><h3 id="let-amp-let-amp-letrec"><a href="#let-amp-let-amp-letrec" class="headerlink" title="let &amp; let* &amp; letrec"></a>let &amp; let* &amp; letrec</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">x</span> <span class="number">1</span>)</span><br><span class="line">      (<span class="name">y</span> <span class="number">2</span>)</span><br><span class="line">      (<span class="name">z</span> <span class="number">3</span>))</span><br><span class="line">  (<span class="name"><span class="builtin-name">list</span></span> x y z))</span><br><span class="line">=&gt;  (<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">let*</span></span> ((<span class="name">x</span> <span class="number">1</span>)</span><br><span class="line">       (<span class="name">y</span> x))</span><br><span class="line">  (<span class="name"><span class="builtin-name">+</span></span> x y))</span><br><span class="line">=&gt;  <span class="number">2</span></span><br><span class="line">(<span class="name"><span class="builtin-name">letrec</span></span> ((<span class="name">local-even?</span> (<span class="name"><span class="builtin-name">lambda</span></span> (n)</span><br><span class="line">                        (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> n <span class="number">0</span>) <span class="literal">#t</span></span><br><span class="line">                            (<span class="name">local-odd?</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">1</span>)))))</span><br><span class="line">         (<span class="name">local-odd?</span> (<span class="name"><span class="builtin-name">lambda</span></span> (n)</span><br><span class="line">                       (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> n <span class="number">0</span>) <span class="literal">#f</span></span><br><span class="line">                           (<span class="name">local-even?</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">1</span>))))))</span><br><span class="line"> (<span class="name"><span class="builtin-name">list</span></span> (<span class="name">local-even?</span> <span class="number">23</span>) (<span class="name">local-odd?</span> <span class="number">23</span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><p>文本替换</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">apply</span></span></span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (test . branch)</span><br><span class="line">    (<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">&#x27;if</span> test</span><br><span class="line">      (<span class="name"><span class="builtin-name">cons</span></span> <span class="symbol">&#x27;begin</span> branch)))</span><br><span class="line">  &#x27;((&lt; (pressure tube) <span class="number">60</span>)</span><br><span class="line">      (open-valve tube)</span><br><span class="line">      (attach floor-pump tube)</span><br><span class="line">      (depress floor-pump <span class="number">5</span>)</span><br><span class="line">      (detach floor-pump tube)</span><br><span class="line">      (close-valve tube)))</span><br></pre></td></tr></table></figure>
+
+<p>转换产生</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&lt;</span></span> (<span class="name">pressure</span> tube) <span class="number">60</span>)</span><br><span class="line">    (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">      (<span class="name">open-valve</span> tube)</span><br><span class="line">      (<span class="name">attach</span> floor-pump tube)</span><br><span class="line">      (<span class="name">depress</span> floor-pump <span class="number">5</span>)</span><br><span class="line">      (<span class="name">detach</span> floor-pump tube)</span><br><span class="line">      (<span class="name">close-valve</span> tube)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defstruct</span> tree height girth age leaf-shape leaf-color)</span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> coconut </span><br><span class="line">  (<span class="name">make-tree</span> <span class="symbol">&#x27;height</span> <span class="number">30</span></span><br><span class="line">             <span class="symbol">&#x27;leaf-shape</span> <span class="symbol">&#x27;frond</span></span><br><span class="line">             <span class="symbol">&#x27;age</span> <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<p><code>defstruct</code>也是宏</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Language/" rel="tag">Functional Language</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LearnYouHaskell" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/16/LearnYouHaskell/" class="article-date">
+  	<time datetime="2021-10-16T02:45:42.000Z" itemprop="datePublished">2021-10-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/16/LearnYouHaskell/">
+        LearnYouHaskell
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LearnYouAHaskellForGreatGood-笔记"><a href="#LearnYouAHaskellForGreatGood-笔记" class="headerlink" title="LearnYouAHaskellForGreatGood 笔记"></a>LearnYouAHaskellForGreatGood 笔记</h1><p>参考 <a target="_blank" rel="noopener" href="http://learnyouahaskell.com/chapters">Learn You a Haskell for Great Good!</a></p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> + <span class="number">3</span></span><br><span class="line"><span class="number">49</span> * <span class="number">100</span></span><br><span class="line"><span class="number">1</span> - <span class="number">2</span></span><br><span class="line"><span class="number">5</span> / <span class="number">2</span> </span><br><span class="line"></span><br><span class="line"><span class="type">True</span> &amp;&amp; <span class="type">False</span></span><br><span class="line"><span class="type">True</span> || <span class="type">False</span></span><br><span class="line"><span class="title">not</span> <span class="type">True</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> /= <span class="number">4</span> <span class="comment">-- 不等于</span></span><br><span class="line"><span class="number">5</span> == <span class="number">5</span> <span class="comment">-- 等于</span></span><br><span class="line"></span><br><span class="line"><span class="title">doubleSmallNumber</span> x = <span class="keyword">if</span> x &gt; <span class="number">100</span>  </span><br><span class="line">                        <span class="keyword">then</span> x  </span><br><span class="line">                        <span class="keyword">else</span> x*<span class="number">2</span>   <span class="comment">-- if then else 是三目运算符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- list</span></span><br><span class="line">[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="number">3</span>:<span class="number">4</span>:<span class="number">5</span>:[]</span><br><span class="line">[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]!!<span class="number">0</span> == <span class="number">3</span></span><br><span class="line">[&#x27;w&#x27;,&#x27;o&#x27;] ++ [&#x27;o&#x27;,&#x27;t&#x27;]  <span class="comment">-- 字符串是字符列表</span></span><br><span class="line"><span class="comment">-- 常见的head tail last init</span></span><br><span class="line"></span><br><span class="line"><span class="title">length</span> [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line"><span class="title">null</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="title">reverse</span> [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"><span class="title">take</span> <span class="number">3</span> [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"><span class="title">drop</span> <span class="number">3</span> [<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="title">minimum</span> [<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>]  </span><br><span class="line"><span class="title">maximum</span> [<span class="number">1</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] </span><br><span class="line"><span class="title">sum</span> [<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>]  </span><br><span class="line"><span class="title">product</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">0</span>]  </span><br><span class="line"><span class="number">4</span> `elem` [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]  <span class="comment">-- 4 in [3,4,5,6] True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- range</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2.</span><span class="number">.20</span>]</span><br><span class="line">[<span class="number">20</span>,<span class="number">19.</span><span class="number">.1</span>]</span><br><span class="line">[&#x27;a&#x27;..&#x27;z&#x27;]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列表生成式</span></span><br><span class="line">[x*<span class="number">2</span> | x &lt;- [<span class="number">1.</span><span class="number">.10</span>], x*<span class="number">2</span> &gt;= <span class="number">12</span>] </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--tuple</span></span><br><span class="line"><span class="title">fst</span> (<span class="number">8</span>,<span class="number">11</span>)</span><br><span class="line"><span class="title">snd</span> (<span class="number">8</span>,<span class="number">11</span>)</span><br><span class="line"><span class="title">zip</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>算术运算是中缀</p>
+<p>函数加反引号<code>``</code>可以变成中缀，中缀加<code>()</code>可以变前缀</p>
+<p>自定义的函数若函数名全部由特殊字符组成则可以直接定义中缀</p>
+<h2 id="类型和类型类（Types-and-Typeclasses）"><a href="#类型和类型类（Types-and-Typeclasses）" class="headerlink" title="类型和类型类（Types and Typeclasses）"></a>类型和类型类（Types and Typeclasses）</h2><p>编译期类型推断，每一个表达式有确定类型</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">ghci</span>&gt; :t &#x27;a&#x27; <span class="comment">--检查类型  </span></span><br><span class="line"><span class="comment">-- 函数类型注解</span></span><br><span class="line"></span><br><span class="line"><span class="title">removeNonUppercase</span>:: [<span class="type">Char</span>] -&gt; [<span class="type">Char</span>]</span><br><span class="line"><span class="title">removeNonUppercase</span> st = [c | c &lt;- st, c `elem` [&#x27;<span class="type">A&#x27;</span>..&#x27;<span class="type">Z&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="title">addThree</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span> <span class="comment">--柯里化函数</span></span><br><span class="line"><span class="title">addThree</span> x y z = x + y + z</span><br></pre></td></tr></table></figure>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul>
+<li>Int: i32</li>
+<li>Integer: Decimal</li>
+<li>Float: f32</li>
+<li>Double: f64</li>
+<li>Char</li>
+<li>Tuple</li>
+<li>(): Unit</li>
+</ul>
+<h3 id="type-variables"><a href="#type-variables" class="headerlink" title="type variables"></a>type variables</h3><p>类似泛型</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="type">Eq</span> a) =&gt; a -&gt; a -&gt; <span class="type">Bool</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">foo</span></span>&lt;T: <span class="built_in">Eq</span>&gt;(a: T,b: T)-&gt; Bool </span><br></pre></td></tr></table></figure>
+<p>据说Rust和Haskell标准库很像,</p>
+<p>有Ord,Show,Read,Enum,Bounded,Num</p>
+<p>整数：Integral</p>
+<p>浮点数： Floating</p>
+<h2 id="函数与模式匹配-pattern-match"><a href="#函数与模式匹配-pattern-match" class="headerlink" title="函数与模式匹配(pattern match)"></a>函数与模式匹配(pattern match)</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sayMe</span> :: (<span class="type">Integral</span> a) =&gt; a -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">sayMe</span> <span class="number">1</span> = <span class="string">&quot;One!&quot;</span>  </span><br><span class="line"><span class="title">sayMe</span> <span class="number">2</span> = <span class="string">&quot;Two!&quot;</span>  </span><br><span class="line"><span class="title">sayMe</span> <span class="number">3</span> = <span class="string">&quot;Three!&quot;</span>  </span><br><span class="line"><span class="title">sayMe</span> <span class="number">4</span> = <span class="string">&quot;Four!&quot;</span>  </span><br><span class="line"><span class="title">sayMe</span> <span class="number">5</span> = <span class="string">&quot;Five!&quot;</span>  </span><br><span class="line"><span class="title">sayMe</span> x = <span class="string">&quot;Not between 1 and 5&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">-- recursive</span></span><br><span class="line"><span class="title">factorial</span> :: (<span class="type">Integral</span> a) =&gt; a -&gt; a  </span><br><span class="line"><span class="title">factorial</span> <span class="number">0</span> = <span class="number">1</span>  </span><br><span class="line"><span class="title">factorial</span> n = n * factorial (n - <span class="number">1</span>)  </span><br><span class="line"></span><br><span class="line"><span class="title">tell</span> :: (<span class="type">Show</span> a) =&gt; [a] -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">tell</span> [] = <span class="string">&quot;The list is empty&quot;</span>  </span><br><span class="line"><span class="title">tell</span> (x:[]) = <span class="string">&quot;The list has one element: &quot;</span> ++ show x  </span><br><span class="line"><span class="title">tell</span> (x:y:[]) = <span class="string">&quot;The list has two elements: &quot;</span> ++ show x ++ <span class="string">&quot; and &quot;</span> ++ show y  </span><br><span class="line"><span class="title">tell</span> (x:y:_) = <span class="string">&quot;This list is long. The first two elements are: &quot;</span> ++ show x ++ <span class="string">&quot; and &quot;</span> ++ show y </span><br><span class="line"></span><br><span class="line"><span class="title">sum&#x27;</span> :: (<span class="type">Num</span> a) =&gt; [a] -&gt; a</span><br><span class="line"><span class="title">sum&#x27;</span> [] = <span class="number">0</span></span><br><span class="line"><span class="title">sum&#x27;</span> (x:xs) = x + sum&#x27; sum&#x27; xs</span><br><span class="line"></span><br><span class="line"><span class="title">capital</span> :: <span class="type">String</span> -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">capital</span> <span class="string">&quot;&quot;</span> = <span class="string">&quot;Empty string, whoops!&quot;</span>  </span><br><span class="line"><span class="title">capital</span> all@(x:xs) = <span class="string">&quot;The first letter of &quot;</span> ++ all ++ <span class="string">&quot; is &quot;</span> ++ [x]  </span><br><span class="line"></span><br><span class="line"><span class="comment">-- guard 条件分支</span></span><br><span class="line"><span class="title">bmiTell</span> :: (<span class="type">RealFloat</span> a) =&gt; a -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">bmiTell</span> bmi  </span><br><span class="line">    | bmi &lt;= <span class="number">18.5</span> = <span class="string">&quot;You&#x27;re underweight, you emo, you!&quot;</span>  </span><br><span class="line">    | bmi &lt;= <span class="number">25.0</span> = <span class="string">&quot;You&#x27;re supposedly normal. Pffft, I bet you&#x27;re ugly!&quot;</span>  </span><br><span class="line">    | bmi &lt;= <span class="number">30.0</span> = <span class="string">&quot;You&#x27;re fat! Lose some weight, fatty!&quot;</span>  </span><br><span class="line">    | otherwise   = <span class="string">&quot;You&#x27;re a whale, congratulations!&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">-- guard 也可以写在一行</span></span><br><span class="line"><span class="comment">--where子句</span></span><br><span class="line"><span class="title">bmiTell</span> :: (<span class="type">RealFloat</span> a) =&gt; a -&gt; a -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">bmiTell</span> weight height  </span><br><span class="line">    | bmi &lt;= skinny = <span class="string">&quot;You&#x27;re underweight, you emo, you!&quot;</span>  </span><br><span class="line">    | bmi &lt;= normal = <span class="string">&quot;You&#x27;re supposedly normal. Pffft, I bet you&#x27;re ugly!&quot;</span>  </span><br><span class="line">    | bmi &lt;= fat    = <span class="string">&quot;You&#x27;re fat! Lose some weight, fatty!&quot;</span>  </span><br><span class="line">    | otherwise     = <span class="string">&quot;You&#x27;re a whale, congratulations!&quot;</span>  </span><br><span class="line">    <span class="keyword">where</span> bmi = weight / height ^ <span class="number">2</span>  </span><br><span class="line">          skinny = <span class="number">18.5</span>  </span><br><span class="line">          normal = <span class="number">25.0</span>  </span><br><span class="line">          fat = <span class="number">30.0</span>   </span><br><span class="line"><span class="comment">--where子句模式匹配</span></span><br><span class="line"><span class="title">initials</span> :: <span class="type">String</span> -&gt; <span class="type">String</span> -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">initials</span> firstname lastname = [f] ++ <span class="string">&quot;. &quot;</span> ++ [l] ++ <span class="string">&quot;.&quot;</span>  </span><br><span class="line">    <span class="keyword">where</span> (f:_) = firstname  </span><br><span class="line">          (l:_) = lastname    </span><br><span class="line"><span class="comment">--where定义函数</span></span><br><span class="line"><span class="title">calcBmis</span> :: (<span class="type">RealFloat</span> a) =&gt; [(a, a)] -&gt; [a]  </span><br><span class="line"><span class="title">calcBmis</span> xs = [bmi w h | (w, h) &lt;- xs]  </span><br><span class="line">    <span class="keyword">where</span> bmi weight height = weight / height ^ <span class="number">2</span>  </span><br><span class="line"><span class="comment">--let..in..</span></span><br><span class="line"><span class="title">cylinder</span> :: (<span class="type">RealFloat</span> a) =&gt; a -&gt; a -&gt; a  </span><br><span class="line"><span class="title">cylinder</span> r h = </span><br><span class="line"><span class="title">let</span> sideArea = <span class="number">2</span> * pi * r * h  </span><br><span class="line">    topArea = pi * r ^<span class="number">2</span>  </span><br><span class="line"><span class="title">in</span>  sideArea + <span class="number">2</span> * topArea </span><br><span class="line"><span class="comment">-- 分号分隔</span></span><br><span class="line">(<span class="keyword">let</span> a = <span class="number">100</span>; b = <span class="number">200</span>; c = <span class="number">300</span> <span class="keyword">in</span> a*b*c, <span class="keyword">let</span> foo=<span class="string">&quot;Hey &quot;</span>; bar = <span class="string">&quot;there!&quot;</span> <span class="keyword">in</span> foo ++ bar)</span><br><span class="line"></span><br><span class="line"><span class="comment">--模式匹配</span></span><br><span class="line"><span class="title">case</span> expr <span class="keyword">of</span> pat -&gt; res</span><br><span class="line">             pat -&gt; res</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>let in 结构本身是表达式</li>
+<li>case of 结构也是表达式</li>
+<li>可能都是表达式</li>
+</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>大概函数式语言中大多结构都由递归实现</p>
+<h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">quicksort</span> :: (<span class="type">Ord</span> a) =&gt; [a] -&gt; [a]</span><br><span class="line"><span class="title">quicksort</span> [] = []</span><br><span class="line"><span class="title">quicksort</span> (x:xs) = </span><br><span class="line">    <span class="keyword">let</span> smallerSorted = quicksort [a | a &lt;- xs, a &lt;= x]</span><br><span class="line">        biggerSorted = quicksort [a | a &lt;- xs, a &gt; x]</span><br><span class="line">    <span class="keyword">in</span> smallerSorted ++ [x] ++ biggerSorted</span><br></pre></td></tr></table></figure>
+
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><ul>
+<li>把函数作为返回值或者参数的函数</li>
+<li>Haskell 函数都是柯里化函数(Curried Function), 只接受一个参数</li>
+<li>可以部分绑定参数</li>
+</ul>
+<p>如max</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">max</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">(max <span class="number">4</span>) <span class="number">5</span></span><br><span class="line"><span class="type">Prelude</span>&gt; :t (max <span class="number">4</span>)</span><br><span class="line">(max <span class="number">4</span>) :: (<span class="type">Ord</span> a, <span class="type">Num</span> a) =&gt; a -&gt; a</span><br></pre></td></tr></table></figure>
+
+<p>显然有map，filter，foldl(reduce)</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">map</span> (+<span class="number">3</span>) [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>]  </span><br><span class="line"><span class="title">filter</span> (&gt;<span class="number">3</span>) [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br></pre></td></tr></table></figure>
+
+<p>lambda函数</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(\xs -&gt; length xs &gt; <span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--等价</span></span><br><span class="line"><span class="title">addThree</span> :: (<span class="type">Num</span> a) =&gt; a -&gt; a -&gt; a -&gt; a  </span><br><span class="line"><span class="title">addThree</span> x y z = x + y + z  </span><br><span class="line"></span><br><span class="line"><span class="title">addThree</span> :: (<span class="type">Num</span> a) =&gt; a -&gt; a -&gt; a -&gt; a  </span><br><span class="line"><span class="title">addThree</span> = \x -&gt; \y -&gt; \z -&gt; x + y + z  </span><br></pre></td></tr></table></figure>
+
+<h3 id="Function-Application"><a href="#Function-Application" class="headerlink" title="Function Application($)"></a>Function Application($)</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">($) :: (a -&gt; b) -&gt; a -&gt; b</span><br><span class="line"><span class="title">f</span> $ x = f x</span><br><span class="line"><span class="comment">-- $ 优先级很低</span></span><br><span class="line"><span class="title">sqrt</span> (<span class="number">3</span> + <span class="number">4</span> + <span class="number">9</span>)</span><br><span class="line"><span class="comment">--等价于</span></span><br><span class="line"><span class="title">sqrt</span> $ <span class="number">3</span> + <span class="number">4</span> + <span class="number">9</span></span><br><span class="line"><span class="comment">--函数复合</span></span><br><span class="line">(.) :: (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c</span><br><span class="line"><span class="title">f</span> . g = \x -&gt; f (g x)</span><br><span class="line"></span><br><span class="line"><span class="title">fn</span> = tan . cos . max <span class="number">50</span> <span class="comment">-- 省掉了两边的x</span></span><br><span class="line"><span class="title">fn</span> x = tan (cos (max <span class="number">50</span> x))</span><br></pre></td></tr></table></figure>
+
+<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Data.List</span><br><span class="line"><span class="title">ghci</span>&gt; :m + <span class="type">Data</span>.<span class="type">List</span></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map <span class="keyword">as</span> M</span><br><span class="line"><span class="keyword">import</span> Data.List <span class="keyword">hiding</span> (<span class="title">nub</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- A\B.hs 目录</span></span><br><span class="line"><span class="keyword">module</span> A.B(</span><br><span class="line">    <span class="title">foo</span></span><br><span class="line">,   <span class="title">foo0</span></span><br><span class="line">) <span class="keyword">where</span></span><br><span class="line"><span class="comment">-- exported functions</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="类型-1"><a href="#类型-1" class="headerlink" title="类型"></a>类型</h2><h3 id="代数数据类型"><a href="#代数数据类型" class="headerlink" title="代数数据类型"></a>代数数据类型</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Bool</span> = <span class="type">False</span> | <span class="type">True</span></span></span><br><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Shape</span> = <span class="type">Circle</span> <span class="type">Float</span> <span class="type">Float</span> <span class="type">Float</span> | <span class="type">Rectangle</span> <span class="type">Float</span> <span class="type">Float</span> <span class="type">Float</span> <span class="type">Float</span> <span class="keyword">deriving</span> (<span class="type">Show</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Shape</span></span>: Display&#123;</span><br><span class="line">    Circle(<span class="built_in">f32</span>,<span class="built_in">f32</span>,<span class="built_in">f32</span>),</span><br><span class="line">    Rectangle(<span class="built_in">f32</span>,<span class="built_in">f32</span>,<span class="built_in">f32</span>,<span class="built_in">f32</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>(..)</code>导出所有值构造器</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> Shapes   </span><br><span class="line">( <span class="type">Point(..)</span>  </span><br><span class="line">, <span class="type">Shape(..)</span>  </span><br><span class="line">, <span class="title">surface</span>  </span><br><span class="line">, <span class="title">nudge</span>  </span><br><span class="line">, <span class="title">baseCircle</span>  </span><br><span class="line">, <span class="title">baseRect</span>  </span><br><span class="line">) <span class="keyword">where</span>  </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Person</span> = <span class="type">Person</span>&#123;</span></span><br><span class="line"><span class="class">    <span class="title">firstName</span> :: <span class="type">String</span></span></span><br><span class="line"><span class="class">    ,<span class="title">lastName</span> :: <span class="type">String</span></span></span><br><span class="line"><span class="class">&#125; <span class="comment">-- 结构体</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">Person</span> &#123;firstName = <span class="string">&quot;Ayaka&quot;</span>, lastName = <span class="string">&quot;Kamisato&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类型参数"><a href="#类型参数" class="headerlink" title="类型参数"></a>类型参数</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Maybe</span> a = <span class="type">Nothing</span> | <span class="type">Just</span> a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Optional</span></span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="literal">Some</span>(T),</span><br><span class="line">    <span class="literal">None</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Car</span> a b c = <span class="type">Car</span> &#123; <span class="title">company</span> :: <span class="title">a</span>  </span></span><br><span class="line"><span class="class">                        , <span class="title">model</span> :: <span class="title">b</span>  </span></span><br><span class="line"><span class="class">                        , <span class="title">year</span> :: <span class="title">c</span>   </span></span><br><span class="line"><span class="class">                        &#125; <span class="keyword">deriving</span> (<span class="type">Show</span>)  </span></span><br></pre></td></tr></table></figure>
+<h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="type">String</span> = [<span class="type">Char</span>]  </span></span><br><span class="line"><span class="class"><span class="keyword">type</span> <span class="type">AssocList</span> k v = [(<span class="title">k</span>,<span class="title">v</span>)]</span></span><br><span class="line"><span class="class"><span class="keyword">type</span> <span class="type">IntMap</span> v = <span class="type">Map</span> <span class="type">Int</span> v</span></span><br><span class="line"><span class="class"><span class="keyword">type</span> <span class="type">IntMap</span> = <span class="type">Map</span> <span class="type">Int</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="递归数据类型"><a href="#递归数据类型" class="headerlink" title="递归数据类型"></a>递归数据类型</h3><p>在rust中，要实现递归类型要套个<code>Box&lt;T&gt;</code></p>
+<p>在swift中，大概对应 <code>indirect case</code></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">List</span> a = <span class="type">Empty</span> | <span class="type">Cons</span> a (<span class="type">List</span> <span class="title">a</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Typeclass"><a href="#Typeclass" class="headerlink" title="Typeclass"></a>Typeclass</h3><p>类比Java中的interface，abstract class</p>
+<p>Rust中的Trait</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Eq</span> a <span class="keyword">where</span></span></span><br><span class="line">    (==) :: a -&gt; a -&gt; <span class="type">Bool</span></span><br><span class="line">    (/=) :: a -&gt; a -&gt; <span class="type">Bool</span></span><br><span class="line">    x == y = not (x /= y)</span><br><span class="line">    x /= y = not (x == y)</span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="keyword">instance</span> <span class="type">Eq</span> <span class="type">TrafficLight</span> <span class="keyword">where</span></span></span><br><span class="line">    <span class="type">Red</span> == <span class="type">Red</span> = <span class="type">True</span></span><br><span class="line">    <span class="type">Green</span> == <span class="type">Green</span> = <span class="type">True</span></span><br><span class="line">    <span class="type">Yellow</span> == <span class="type">Yellow</span> = <span class="type">True</span></span><br><span class="line">    _ == _ = <span class="type">False</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="keyword">instance</span> (<span class="type">Eq</span> <span class="title">m</span>) =&gt; <span class="type">Eq</span> (<span class="type">Maybe</span> <span class="title">m</span>) <span class="keyword">where</span></span></span><br><span class="line">    <span class="type">Just</span> x == <span class="type">Just</span> y = x == y</span><br><span class="line">    <span class="type">Nothing</span> == <span class="type">Nothing</span> = <span class="type">True</span></span><br><span class="line">    _ == _ = <span class="type">False</span></span><br></pre></td></tr></table></figure>
+<p>REPL查看Typeclass信息<code>:info</code></p>
+<h3 id="Functor-函子"><a href="#Functor-函子" class="headerlink" title="Functor 函子"></a>Functor 函子</h3><p><code>types that can act like a box can be functors</code></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Functor</span> f <span class="keyword">where</span></span></span><br><span class="line">    fmap :: (a -&gt; b) -&gt; f a -&gt; f b</span><br></pre></td></tr></table></figure>
+
+<h2 id="IO操作，非纯函数式的部分"><a href="#IO操作，非纯函数式的部分" class="headerlink" title="IO操作，非纯函数式的部分"></a>IO操作，非纯函数式的部分</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">main</span> = <span class="keyword">do</span>  </span><br><span class="line">    putStrLn <span class="string">&quot;Hello, what&#x27;s your name?&quot;</span>  </span><br><span class="line">    name &lt;- getLine  </span><br><span class="line">    putStrLn (<span class="string">&quot;Hey &quot;</span> ++ name ++ <span class="string">&quot;, you rock!&quot;</span>)  </span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">3</span></span><br><span class="line">        b = <span class="number">4</span></span><br><span class="line"><span class="title">getline</span> :: <span class="type">IO</span> <span class="type">String</span></span><br><span class="line"><span class="title">putStrLn</span> :: <span class="type">String</span> -&gt; <span class="type">IO</span> ()  </span><br></pre></td></tr></table></figure>
+
+<p>很像面向过程语言，除了主函数递归。</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">main</span> = <span class="keyword">do</span>   </span><br><span class="line">    line &lt;- getLine  </span><br><span class="line">    <span class="keyword">if</span> null line  </span><br><span class="line">        <span class="keyword">then</span> return ()  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">do</span>  </span><br><span class="line">            putStrLn $ reverseWords line  </span><br><span class="line">            main  </span><br></pre></td></tr></table></figure>
+
+<h3 id="lazy-IO"><a href="#lazy-IO" class="headerlink" title="lazy IO"></a>lazy IO</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">main</span> = <span class="keyword">do</span>  </span><br><span class="line">    contents &lt;- getContents  </span><br><span class="line">    putStr (shortLinesOnly contents)  </span><br><span class="line">    </span><br><span class="line"><span class="title">shortLinesOnly</span> :: <span class="type">String</span> -&gt; <span class="type">String</span>  </span><br><span class="line"><span class="title">shortLinesOnly</span> input =   </span><br><span class="line">    <span class="keyword">let</span> allLines = lines input  </span><br><span class="line">        shortLines = filter (\line -&gt; length line &lt; <span class="number">10</span>) allLines  </span><br><span class="line">        result = unlines shortLines  </span><br><span class="line">    <span class="keyword">in</span>  result  </span><br></pre></td></tr></table></figure>
+
+<p>像是Promise</p>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> System.IO     </span><br><span class="line">    </span><br><span class="line"><span class="title">main</span> = <span class="keyword">do</span>     </span><br><span class="line">    withFile <span class="string">&quot;girlfriend.txt&quot;</span> <span class="type">ReadMode</span> (\handle -&gt; <span class="keyword">do</span>  </span><br><span class="line">        contents &lt;- hGetContents handle     </span><br><span class="line">        putStr contents) </span><br></pre></td></tr></table></figure>
+<p>对应的有<code>hGetLine, hPutStr, hPutStrLn, hGetChar</code></p>
+<h3 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> System.Environment   </span><br><span class="line"><span class="keyword">import</span> Data.List  </span><br><span class="line">  </span><br><span class="line"><span class="title">main</span> = <span class="keyword">do</span>  </span><br><span class="line">   args &lt;- getArgs  </span><br><span class="line">   progName &lt;- getProgName  </span><br><span class="line">   putStrLn <span class="string">&quot;The arguments are:&quot;</span>  </span><br><span class="line">   mapM putStrLn args  </span><br><span class="line">   putStrLn <span class="string">&quot;The program name is:&quot;</span>  </span><br><span class="line">   putStrLn progName </span><br></pre></td></tr></table></figure>
+
+<h2 id="函子和单子"><a href="#函子和单子" class="headerlink" title="函子和单子"></a>函子和单子</h2><p>看不懂</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> (<span class="type">Functor</span> <span class="title">f</span>) =&gt; <span class="type">Applicative</span> f <span class="keyword">where</span></span>  </span><br><span class="line">    pure :: a -&gt; f a  </span><br><span class="line">    (&lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b  </span><br></pre></td></tr></table></figure>
+
+<p>类似rust的<code>Box&lt;T&gt;</code> 可以调用<code>T</code>上的函数</p>
+<p>更适合的比喻是一种计算上下文。</p>
+<h3 id="gt-r"><a href="#gt-r" class="headerlink" title="(-&gt;) r"></a>(-&gt;) r</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">instance</span> <span class="type">Functor</span> ((-&gt;) r) <span class="keyword">where</span></span>  </span><br><span class="line">    fmap = (.) </span><br><span class="line"><span class="title">fmap</span> :: (a -&gt; b) -&gt; (r -&gt; a) -&gt; (r -&gt; b)</span><br><span class="line"><span class="comment">-- 函数复合</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Monoid"><a href="#Monoid" class="headerlink" title="Monoid"></a>Monoid</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">Monoid</span> m <span class="keyword">where</span></span>  </span><br><span class="line">    mempty :: m  </span><br><span class="line">    mappend :: m -&gt; m -&gt; m  </span><br><span class="line">    mconcat :: [m] -&gt; m  </span><br><span class="line">    mconcat = foldr mappend mempty  </span><br></pre></td></tr></table></figure>
+<p>满足结合律，幺元存在，如乘法<code>*</code>，列表<code>[]</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Language/" rel="tag">Functional Language</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-AnotherLispDialectJanet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/15/AnotherLispDialectJanet/" class="article-date">
+  	<time datetime="2021-10-15T06:50:16.000Z" itemprop="datePublished">2021-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/15/AnotherLispDialectJanet/">
+        AnotherLispDialectJanet
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Language/" rel="tag">Functional Language</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-CO-P0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/14/CO-P0/" class="article-date">
+  	<time datetime="2021-10-14T02:56:39.000Z" itemprop="datePublished">2021-10-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/14/CO-P0/">
+        CO-P0
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="计组P0"><a href="#计组P0" class="headerlink" title="计组P0"></a>计组P0</h1><h2 id="Verilog层次化事件队列"><a href="#Verilog层次化事件队列" class="headerlink" title="Verilog层次化事件队列"></a>Verilog层次化事件队列</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.动态事件队列（动态事件队列在队列内部执行顺序无硬性规定，但在同一个 begin - end 语句块中的语句应当严格按照源代码中的顺序执行；且多个非阻塞赋值应当按照语句执行顺序进行）</span><br><span class="line">    阻塞赋值</span><br><span class="line">    计算非阻塞赋值语句右边的表达式（RHS）</span><br><span class="line">    连续赋值（如 assign）</span><br><span class="line">    执行 display 命令</span><br><span class="line">    ……</span><br><span class="line">2.停止运行的时间队列（#0）（不推荐使用）</span><br><span class="line">3.非阻塞事件队列：更新非阻塞赋值语句 LHS（左边变量）的值。</span><br><span class="line">4.监控事件队列（执行 monitor，strobe 命令）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>事件优先级依次递减，</p>
+<p>高优先级事件执行后才执行低优先级事件，</p>
+<p>同优先级事件不确定执行顺序，</p>
+<p>begin-end块中代码顺序执行</p>
+<p><strong>RHS表达式的计算在某个仿真时刻随机开始</strong></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(clk) #<span class="number">10</span> clk &lt;= ~clk;</span><br></pre></td></tr></table></figure>
+<h2 id="CRC"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</h2><p><code>汉明距离表示两个（相同长度）字对应位不同的数量</code></p>
+<h3 id="模2除法运算法则"><a href="#模2除法运算法则" class="headerlink" title="模2除法运算法则"></a>模2除法运算法则</h3><p>不借位，1-1=0，0-1=1，1-0=1，0-0=0，等价于异或</p>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>低位补校验码位数的零，除以选定的数，余数高位补零至校验码要求位数，置于原来数据的低位。</p>
+<p>原理大概是传输双方选定一个除数，然后看传过来的数据补上校验码能否整除，若不能，则有错。</p>
+<h2 id="识别字符串的自动机"><a href="#识别字符串的自动机" class="headerlink" title="识别字符串的自动机"></a>识别字符串的自动机</h2><p><strong>要考虑模式识别失败后当前后缀是否为要识别模式的某个前缀（KMP？）</strong></p>
+<h2 id="Logism命令行启动，自动测试"><a href="#Logism命令行启动，自动测试" class="headerlink" title="Logism命令行启动，自动测试"></a>Logism命令行启动，自动测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar logisim-filename.jar adder-test.circ -tty table</span><br></pre></td></tr></table></figure>
+<p>特殊输出端口：halt，为1时停止测试</p>
+<h3 id="Logism评测奇怪的特性"><a href="#Logism评测奇怪的特性" class="headerlink" title="Logism评测奇怪的特性"></a>Logism评测奇怪的特性</h3><p>由于Logism自动测试只输出变化的信号，所以自动机大概不要在输出加寄存器（？）</p>
+<p>大概mealy输出不加寄存器，Moore输出有时会加寄存器？（或许应该叫做状态机的分解，另一个寄存器应该是又一个分解的状态机）</p>
+<p>提交前记得Ctrl-S</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BUAA-CO/" rel="tag">BUAA-CO</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-WhatBash" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/10/WhatBash/" class="article-date">
+  	<time datetime="2021-10-10T05:57:59.000Z" itemprop="datePublished">2021-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/10/WhatBash/">
+        WhatBash
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello World&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="文件系统和权限"><a href="#文件系统和权限" class="headerlink" title="文件系统和权限"></a>文件系统和权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--</span><br><span class="line">依次是文件类型(-cpbsdl),权限(超级用户，用户组，其他用户 rwx)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+X,o+wx test.sh</span><br></pre></td></tr></table></figure>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; <span class="string">BLOCK</span></span><br><span class="line"><span class="string">This is the basic bash script</span></span><br><span class="line"><span class="string">This is the basic bash script</span></span><br><span class="line"><span class="string">BLOCK</span></span><br><span class="line"><span class="comment"># This is the basic bash script</span></span><br><span class="line">:<span class="string">&#x27;</span></span><br><span class="line"><span class="string">This is the basic bash script</span></span><br><span class="line"><span class="string">This is the basic bash script</span></span><br><span class="line"><span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串插值，引号"><a href="#字符串插值，引号" class="headerlink" title="字符串插值，引号"></a>字符串插值，引号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">comment=<span class="string">&quot;Welcome to W3Cschool!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$comment</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;$comment&#x27;</span></span><br><span class="line"><span class="comment"># 单引号内不执行插值，双引号进行插值</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=3</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span></span><br><span class="line"><span class="comment"># 变量名与值之间的=两侧都不能有空格</span></span><br></pre></td></tr></table></figure>
+<h4 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$0 ——指定要调用的脚本名称。</span><br><span class="line">$1-9 ——存储前9个自变量的名称，或可用作自变量的位置。</span><br><span class="line">$# ——指定传递给脚本的参数总数。</span><br><span class="line">$* ——将所有命令行参数连接在一起来存储它们。</span><br><span class="line">$@ ——将参数列表存储为数组。</span><br><span class="line">$? ——指定当前脚本的进程 ID 。</span><br><span class="line">$$ ——指定最后一个命令或最近执行过程的推出状态。</span><br><span class="line">$! ——显示最后一个后台作业的 ID 。</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">parameter=(<span class="string">&quot;<span class="variable">$@</span>&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;parameter[0]&#125;</span> <span class="variable">$&#123;parameter[1]&#125;</span> <span class="variable">$&#123;parameter[2]&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="命令替换"><a href="#命令替换" class="headerlink" title="命令替换"></a>命令替换</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">variable_name=`command_name`</span><br><span class="line">variable_name=`command_name [option...] argument1 argument2...`</span><br><span class="line">variable_name=`/path/to/<span class="built_in">command</span>`</span><br><span class="line">variable_name=$(command_name)</span><br><span class="line">variable_name=$(command_name [option...] argument1 argument2...)</span><br><span class="line">variable_name=$(path/to/<span class="built_in">command</span>)</span><br></pre></td></tr></table></figure>
+命令替换允许命令的输出替换命令本身</li>
+</ul>
+<h3 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span> emm</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$emm</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;username:&quot;</span> user</span><br><span class="line"><span class="comment">#-s 输入密码，不回显</span></span><br><span class="line"><span class="comment">#-a 输入数组</span></span><br><span class="line"><span class="built_in">read</span> -a names</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;The entered names are : <span class="variable">$&#123;names[0]&#125;</span>, <span class="variable">$&#123;names[1]&#125;</span>.&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mdy=`date +%m-%d-%Y`</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Date in format Month-Date-Year&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$mdy</span></span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**求幂</span><br><span class="line">-eq,-ne,-gt,-lt,-ge,-le</span><br><span class="line">其他和C一样</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>运算放在:((expression))</strong></li>
+<li><strong>或者 let <code>&lt;expr&gt;</code></strong><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># []内单个条件，[[]]内多条件运算</span></span><br><span class="line"><span class="keyword">if</span> [ 8 -gt 7 ] || [ 10 -eq 3 ];  </span><br><span class="line"><span class="keyword">then</span>   </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot; Condition is true. &quot;</span>  </span><br><span class="line"><span class="keyword">fi</span>  </span><br><span class="line"><span class="keyword">if</span> [[ 10 -eq 10 &amp;&amp; 5 -gt 4 || 3 -eq 4 || 3 -lt 6 ]];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Condition is true.&quot;</span>  </span><br><span class="line"><span class="keyword">fi</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ 10 -gt 9 &amp;&amp; 10 == 9 || 2 -lt 1 || 25 -gt 20 ]];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Given condition is true.&quot;</span>  </span><br><span class="line"><span class="keyword">else</span>  </span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Given condition is false.&quot;</span>  </span><br><span class="line"><span class="keyword">fi</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$num</span> -gt 200 ];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Eligible for 20% discount&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> [[ <span class="variable">$num</span> == 200 || <span class="variable">$num</span> == 100 ]];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Lucky Draw Winner&quot;</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Eligible to get the item for free&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> [[ <span class="variable">$num</span> -gt 100 &amp;&amp; <span class="variable">$num</span> -lt 200 ]];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Eligible for 10% discount&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$num</span> -lt 100 ];  </span><br><span class="line"><span class="keyword">then</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;No discount&quot;</span>  </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#if elif else</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">! EXPRESSION</span><br><span class="line">检查EXPRESSION是否为假。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-n STRING</span><br><span class="line">检查STRING的长度是否大于零。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-z STRING</span><br><span class="line">检查STRING的长度是否为零(即为空)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">STRING1 == STRING2</span><br><span class="line">检查STRING1是否等于STRING2。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">STRING1 != STRING2</span><br><span class="line">检查STRING1是否不等于STRING2。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INTEGER1 -eq INTEGER2</span><br><span class="line">检查INTEGER1在数值上是否等于INTEGER2。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INTEGER1 -gt INTEGER2</span><br><span class="line">检查INTEGER1在数值上是否大于INTEGER2。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INTEGER1 -lt INTEGER2</span><br><span class="line">检查INTEGER1在数值上是否小于INTEGER2。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-d FILE</span><br><span class="line">检查FILE是否存在并且它是一个目录。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-e FILE</span><br><span class="line">检查FILE是否存在。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-r FILE</span><br><span class="line">检查FILE是否存在，并授予读取权限。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-s FILE</span><br><span class="line">检查FILE是否存在并且其大小大于零(表示它不为空)。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-w FILE</span><br><span class="line">检查FILE是否存在并授予写权限。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-x FILE</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="case-模式匹配"><a href="#case-模式匹配" class="headerlink" title="case 模式匹配"></a>case 模式匹配</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash  </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Do you know Java Programming?&quot;</span>  </span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Yes/No? :&quot;</span> Answer  </span><br><span class="line"><span class="keyword">case</span> <span class="variable">$Answer</span> <span class="keyword">in</span>  </span><br><span class="line">    Yes|yes|y|Y)  </span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;That&#x27;s amazing.&quot;</span>  </span><br><span class="line">        <span class="built_in">echo</span>  </span><br><span class="line">        ;;  </span><br><span class="line">    No|no|N|n)  </span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;It&#x27;s easy. Let&#x27;s start learning from yiibai.com.&quot;</span>  </span><br><span class="line">        ;;  </span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 三表达式</span></span><br><span class="line"><span class="keyword">for</span> (( expression1; expression2; expression3 ))  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line">commands  </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># for range</span></span><br><span class="line">learn=<span class="string">&quot;Start learning from yiibai.com&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> learn <span class="keyword">in</span> <span class="variable">$learn</span>  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$learn</span>  </span><br><span class="line"><span class="keyword">done</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">#For Loop to Read a Range with Increment  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> &#123;1..10..1&#125;  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$num</span>  </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [[ <span class="variable">$snum</span> -le <span class="variable">$enum</span> ]];  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$snum</span>  </span><br><span class="line">((snum++))  </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 支持continue,break</span></span><br><span class="line"><span class="keyword">while</span> :</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 无限循环</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">max=5  </span><br><span class="line">a=1  </span><br><span class="line">b=0  </span><br><span class="line"></span><br><span class="line">until [[ <span class="variable">$a</span> -gt <span class="variable">$max</span> || <span class="variable">$b</span> -gt <span class="variable">$max</span> ]];  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;a = <span class="variable">$a</span> &amp; b = <span class="variable">$b</span>.&quot;</span>  </span><br><span class="line">((a++))  </span><br><span class="line">((b++))  </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=</span><br><span class="line">!=</span><br><span class="line">\&lt;</span><br><span class="line">\&gt;</span><br><span class="line">-n <span class="comment"># 字符串长度大于0</span></span><br><span class="line">-z <span class="comment"># 字符串长度为0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>()&#123;</span><br><span class="line">  <span class="built_in">return</span> xxx</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">foo</span></span>()&#123;</span><br><span class="line">  <span class="built_in">return</span> xxx</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span>(&#123;</span><br><span class="line">  <span class="built_in">builtin</span> <span class="built_in">echo</span> 233</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> -a arr</span><br><span class="line"><span class="built_in">declare</span> -A map</span><br><span class="line">map=(</span><br><span class="line">  [foo]=foo</span><br><span class="line">  [fooo]=fooo</span><br><span class="line">)</span><br><span class="line">arr=(a b c)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;arr[0]&#125;</span></span><br><span class="line">length=<span class="variable">$&#123;#example_array[@]&#125;</span></span><br><span class="line">sliced_array=(<span class="string">&quot;<span class="variable">$&#123;example_array[@]:1:3&#125;</span>&quot;</span>)  </span><br><span class="line">iter = <span class="string">&quot;<span class="variable">$&#123;!example_array[@]&#125;</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>以上内容基于的教程貌似不是很详细</strong></p>
+<h2 id="数据类型，字符串与转义"><a href="#数据类型，字符串与转义" class="headerlink" title="数据类型，字符串与转义"></a>数据类型，字符串与转义</h2><ul>
+<li>对于模式扩展，bash先扩展，再执行</li>
+</ul>
+<h3 id="引号和转义"><a href="#引号和转义" class="headerlink" title="引号和转义"></a>引号和转义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;$echo&#x27;</span> <span class="comment">#原样输出，单引号内不转义</span></span><br><span class="line"><span class="built_in">echo</span> \<span class="variable">$abaaba</span> <span class="comment">#反斜杠输出本身</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;a\tb&quot;</span> <span class="comment">#这样使用转义字符(\n,\r,\t...)</span></span><br></pre></td></tr></table></figure>
+<p>单引号用于保留字符的字面含义，各种特殊字符在单引号里面，都会变为普通字符。<br>双引号<code>&quot;&quot;</code>除<code>$ `` \</code>外，特殊字符都变为普通字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello</span></span><br><span class="line"><span class="string">world&quot;</span> <span class="comment">#多行文本</span></span><br></pre></td></tr></table></figure>
+<h4 id="Here文档"><a href="#Here文档" class="headerlink" title="Here文档"></a>Here文档</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$ foo=<span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">$ cat &lt;&lt; <span class="string">_example_</span></span><br><span class="line"><span class="string">$foo</span></span><br><span class="line"><span class="string">&quot;$foo&quot;</span></span><br><span class="line"><span class="string">&#x27;$foo&#x27;</span></span><br><span class="line"><span class="string">_example_</span></span><br><span class="line"></span><br><span class="line">hello world</span><br><span class="line"><span class="string">&quot;hello world&quot;</span></span><br><span class="line"><span class="string">&#x27;hello world&#x27;</span><span class="comment">#转义</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ foo=<span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">$ cat &lt;&lt; <span class="string">&#x27;_example_&#x27;</span></span><br><span class="line"><span class="variable">$foo</span></span><br><span class="line"><span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span><br><span class="line"><span class="string">&#x27;$foo&#x27;</span></span><br><span class="line">_example_</span><br><span class="line"></span><br><span class="line"><span class="variable">$foo</span></span><br><span class="line"><span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span><br><span class="line"><span class="string">&#x27;$foo&#x27;</span><span class="comment">#没转义</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">command</span> &lt;&lt; <span class="string">token</span></span><br><span class="line"><span class="string">  string</span></span><br><span class="line"><span class="string">token</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> string | <span class="built_in">command</span></span><br><span class="line"><span class="comment">#Here文档本质是重定向</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Here字符串<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat &lt;&lt;&lt; <span class="string">&#x27;hi there&#x27;</span></span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;hi there&#x27;</span> | cat</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>全是字符串，只有字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a=z                     <span class="comment"># 变量 a 赋值为字符串 z</span></span><br><span class="line">b=<span class="string">&quot;a string&quot;</span>            <span class="comment"># 变量值包含空格，就必须放在引号里面</span></span><br><span class="line">c=<span class="string">&quot;a string and <span class="variable">$b</span>&quot;</span>     <span class="comment"># 变量值可以引用其他变量的值</span></span><br><span class="line">d=<span class="string">&quot;\t\ta string\n&quot;</span>      <span class="comment"># 变量值可以使用转义字符</span></span><br><span class="line">e=$(ls -l foo.txt)      <span class="comment"># 变量值可以是命令的执行结果</span></span><br><span class="line">f=$((<span class="number">5</span> * <span class="number">7</span>))            <span class="comment"># 变量值可以是数学运算的结果</span></span><br><span class="line"></span><br><span class="line">a=foo</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;a&#125;</span>_foo</span><br><span class="line"></span><br><span class="line">a=b</span><br><span class="line">c=a</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;c&#125;</span> <span class="comment">#-&gt;a</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;!c&#125;</span> <span class="comment">#-&gt;b</span></span><br><span class="line"><span class="built_in">unset</span> c <span class="comment">#删除变量</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> NAME=value <span class="comment">#把变量作为环境变量暴露给子shell</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h3><p>环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">printenv</span><br><span class="line">env</span><br><span class="line">printenv PATH</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="comment">#显示所以变量</span></span><br><span class="line"><span class="variable">$_</span> <span class="comment">#上一条指令最后的参数</span></span><br><span class="line">$- <span class="comment">#脚本启动参数</span></span><br><span class="line"><span class="variable">$#</span> <span class="comment">#参数数量</span></span><br><span class="line"><span class="variable">$@</span> <span class="comment">#参数数组</span></span><br><span class="line"><span class="variable">$&#123;varname:-word&#125;</span> <span class="comment"># (varname)?varname:word</span></span><br><span class="line"><span class="variable">$&#123;varname:=word&#125;</span> <span class="comment"># (varname)?varname:(varname=word)</span></span><br><span class="line"><span class="variable">$&#123;varname:+word&#125;</span> <span class="comment"># (varname)?word:&#x27;&#x27;</span></span><br><span class="line"><span class="variable">$&#123;varname:?message&#125;</span> <span class="comment">#(varname)?varname:&#123;&quot;varname: message&quot;;abort()&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> -i a=3 <span class="comment"># 定义整数</span></span><br><span class="line"><span class="built_in">declare</span> -x foo <span class="comment"># export foo</span></span><br><span class="line"><span class="built_in">let</span> foo=1+2</span><br><span class="line"><span class="built_in">let</span> <span class="string">&quot;foo = 1 + 2&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;#str&#125;</span> <span class="comment"># 字符串长度</span></span><br><span class="line"><span class="variable">$&#123;varname:offset:length&#125;</span> <span class="comment"># 字符串切片</span></span><br><span class="line"><span class="variable">$&#123;path#pattern&#125;</span> <span class="comment"># 头部非贪婪</span></span><br><span class="line"><span class="variable">$&#123;path##pattern&#125;</span> <span class="comment">#头部贪婪</span></span><br><span class="line"><span class="variable">$&#123;path%pattern&#125;</span> <span class="comment">#尾部非贪婪</span></span><br><span class="line"><span class="variable">$&#123;path%%pattern&#125;</span> <span class="comment">#尾部非贪婪</span></span><br><span class="line"><span class="variable">$&#123;variable//pattern/string&#125;</span></span><br><span class="line"><span class="variable">$&#123;var^^&#125;</span> <span class="comment">#大写</span></span><br><span class="line"><span class="variable">$&#123;var,,&#125;</span> <span class="comment">#小写</span></span><br></pre></td></tr></table></figure>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;comp lib=&quot;0&quot; loc=&quot;(1340,&#123;&#125;)&quot; name=&quot;Tunnel&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=&quot;facing&quot; val=&quot;east&quot;/&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=&quot;width&quot; val=&quot;32&quot;/&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=&quot;label&quot; val=&quot;&#123;&#125;&quot;/&gt;</span></span><br><span class="line"><span class="string">&lt;/comp&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;ent.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>):</span><br><span class="line">        f.write(s.<span class="built_in">format</span>(<span class="number">130</span>+i*<span class="number">10</span>,<span class="string">f&quot;out<span class="subst">&#123;i&#125;</span>&quot;</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> &#123;0..31&#125;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">s=<span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;comp lib=\&quot;0\&quot; loc=\&quot;(1340,<span class="subst">$((130+$i*10)</span>))\&quot; name=\&quot;Tunnel\&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=\&quot;facing\&quot; val=\&quot;east\&quot;/&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=\&quot;width\&quot; val=\&quot;32\&quot;/&gt;</span></span><br><span class="line"><span class="string">      &lt;a name=\&quot;label\&quot; val=\&quot;<span class="variable">$&#123;i&#125;</span>\&quot;/&gt;</span></span><br><span class="line"><span class="string">&lt;/comp&gt;</span></span><br><span class="line"><span class="string">&quot;</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$s</span> &gt;&gt; bashout.txt</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>bash 和与之等价的 python 代码</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-SwiftUi20211009" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/09/SwiftUi20211009/" class="article-date">
+  	<time datetime="2021-10-09T15:24:56.000Z" itemprop="datePublished">2021-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/09/SwiftUi20211009/">
+        SwiftUi20211009
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SwiftUi"><a href="#SwiftUi" class="headerlink" title="SwiftUi"></a>SwiftUi</h1><p><code>@State @EnvironmentObject $</code>状态双向绑定 </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-WhatYAML" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/09/WhatYAML/" class="article-date">
+  	<time datetime="2021-10-09T06:48:40.000Z" itemprop="datePublished">2021-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/09/WhatYAML/">
+        WhatYAML
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">object:</span></span><br><span class="line">    <span class="attr">key1:</span> <span class="string">val1</span></span><br><span class="line">    <span class="attr">key2:</span> <span class="string">val2</span></span><br><span class="line"><span class="comment">#or</span></span><br><span class="line"><span class="attr">object:</span></span><br><span class="line">    <span class="string">?</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">someComplexKey</span></span><br><span class="line">    <span class="string">:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">someComplexVal</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">a</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">b</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">c</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">boolean:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="literal">TRUE</span>  <span class="comment">#true,True都可以</span></span><br><span class="line">    <span class="bullet">-</span> <span class="literal">FALSE</span>  <span class="comment">#false，False都可以</span></span><br><span class="line"><span class="attr">float:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">3.14</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">6.8523015e+5</span>  <span class="comment">#可以使用科学计数法</span></span><br><span class="line"><span class="attr">int:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">123</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">0b1010_0111_0100_1010_1110</span>    <span class="comment">#二进制表示</span></span><br><span class="line"><span class="attr">null:</span></span><br><span class="line">    <span class="attr">nodeName:</span> <span class="string">&#x27;node&#x27;</span></span><br><span class="line">    <span class="attr">parent:</span> <span class="string">~</span>  <span class="comment">#使用~表示null</span></span><br><span class="line"><span class="attr">string:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">哈哈</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&#x27;Hello world&#x27;</span>  <span class="comment">#可以使用双引号或者单引号包裹特殊字符</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">newline</span></span><br><span class="line">      <span class="string">newline2</span>    <span class="comment">#字符串可以拆成多行，每一行会被转化成一个空格</span></span><br><span class="line"><span class="attr">date:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">2018-02-17</span>    <span class="comment">#日期必须使用ISO 8601格式，即yyyy-MM-dd</span></span><br><span class="line"><span class="attr">datetime:</span> </span><br><span class="line">    <span class="bullet">-</span>  <span class="number">2018-02-17T15:02:31+08:00</span>    <span class="comment">#时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="引用和锚点"><a href="#引用和锚点" class="headerlink" title="引用和锚点"></a>引用和锚点</h2><blockquote>
+<p>&amp; 用来建立锚点（defaults），&lt;&lt; 表示合并到当前数据，* 用来引用锚点。</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">defaults:</span> <span class="meta">&amp;defaults</span></span><br><span class="line">  <span class="attr">adapter:</span>  <span class="string">postgres</span></span><br><span class="line">  <span class="attr">host:</span>     <span class="string">localhost</span></span><br><span class="line"></span><br><span class="line"><span class="attr">development:</span></span><br><span class="line">  <span class="attr">database:</span> <span class="string">myapp_development</span></span><br><span class="line">  <span class="string">&lt;&lt;:</span> <span class="meta">*defaults</span></span><br><span class="line"></span><br><span class="line"><span class="attr">test:</span></span><br><span class="line">  <span class="attr">database:</span> <span class="string">myapp_test</span></span><br><span class="line">  <span class="string">&lt;&lt;:</span> <span class="meta">*defaults</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-test-my-site" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/08/test-my-site/" class="article-date">
+  	<time datetime="2021-10-08T13:19:35.000Z" itemprop="datePublished">2021-10-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/08/test-my-site/">
+        test_my_site
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="测试文件"><a href="#测试文件" class="headerlink" title="测试文件"></a>测试文件</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 cactus ball
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
