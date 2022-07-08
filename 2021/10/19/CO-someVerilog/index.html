@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>CO-someVerilog | Cactus Ball</title>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
 
-  <!-- keywords -->
-  
+    
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些Verilogalwaysalways组合逻辑 12always @(*)always_comb always块的左值必须是reg，assign的左值必须是wire，虽然和最后综合的电路没有关系。 if穷尽所有情况以防止生成锁。 casez123456789always @(*) begin    casez (in[3:0])        4&amp;#x27;bzzz1: out &#x3D; 0;">
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+    
+    
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>CO-someVerilog | Cactus Ball</title>
+
+
+    <meta name="keywords" content="BUAA-CO">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="一些Verilogalwaysalways组合逻辑 12always @(*)always_comb always块的左值必须是reg，assign的左值必须是wire，虽然和最后综合的电路没有关系。 if穷尽所有情况以防止生成锁。 casez123456789always @(*) begin    casez (in[3:0])        4&amp;#x27;bzzz1: out &#x3D; 0;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CO-someVerilog">
 <meta property="og:url" content="https://cactusballl.github.io/2021/10/19/CO-someVerilog/index.html">
@@ -20,176 +46,103 @@
 <meta property="article:modified_time" content="2021-10-21T03:14:26.686Z">
 <meta property="article:author" content="cactus ball">
 <meta property="article:tag" content="BUAA-CO">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Cactus Ball" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-  
-
-  
-<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
-
-  
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<meta name="twitter:card" content="summary_large_image">
 
 
-  
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
+        
+    
+
+    
+    
+
+    
+
+     
+
+    <!-- custom head -->
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body>
-  <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-				<img lazy-src="" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-			<h1 class="header-author"><a href="/">cactus ball</a></h1>
-		</hgroup>
-
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">Home</a></li>
-				        
-							<li><a href="/archives">Archives</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="half-header-menu">
-						<a class="hide">Home</a>
-						<a>Tags</a>
-						<a>Links</a>
-						<a>About</a>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-						<!-- music -->
-						
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/BUAA-CO/" style="font-size: 20px;">BUAA-CO</a> <a href="/tags/Functional-Language/" style="font-size: 16.67px;">Functional Language</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/gamedev/" style="font-size: 10px;">gamedev</a> <a href="/tags/rust/" style="font-size: 13.33px;">rust</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">I&#39;m a developer.</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">aaicy64&#39;s Blog</span>
+        </a>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author"></h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">Home</a></li>
-		        
-					<li><a href="/archives">Archives</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-CO-someVerilog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/10/19/CO-someVerilog/" class="article-date">
-  	<time datetime="2021-10-19T13:04:00.000Z" itemprop="datePublished">2021-10-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <div class="header__right">
         
-  
-    <h1 class="article-title" itemprop="name">
-      CO-someVerilog
-      
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        CO-someVerilog
     </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
+    <div class="post-title__meta">
+        <a href="/archives/2021/10/" class="post-meta__date button">2021-10-19</a>
         
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BUAA-CO/" rel="tag">BUAA-CO</a></li></ul>
-	</div>
-
+ 
         
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
         <h1 id="一些Verilog"><a href="#一些Verilog" class="headerlink" title="一些Verilog"></a>一些Verilog</h1><h2 id="always"><a href="#always" class="headerlink" title="always"></a>always</h2><p>always组合逻辑</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*)</span><br><span class="line"><span class="keyword">always_comb</span></span><br></pre></td></tr></table></figure>
 <p>always块的左值必须是reg，assign的左值必须是wire，虽然和最后综合的电路没有关系。</p>
@@ -204,78 +157,111 @@
 <p>生成的门可以用形如<code>xorloop[0].gl</code>引用。</p>
 <h2 id="命名块"><a href="#命名块" class="headerlink" title="命名块"></a>命名块</h2><p>用<code>disable block;</code>相当于<code>break block</code>跳出。</p>
 <h2 id="异步复位"><a href="#异步复位" class="headerlink" title="异步复位"></a>异步复位</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> Clock <span class="keyword">or</span> <span class="keyword">negedge</span> Reset)</span><br></pre></td></tr></table></figure>
-      
     </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/10/21/CO-P1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          CO-P1
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/10/17/Scheme%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Scheme入门</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
+     
+    <div class="post-footer__meta"><p>updated at 2021-10-21</p></div> 
+    <div class="post-entry__tags"><a href="/tags/BUAA-CO/" class="post-tags__link button"># BUAA-CO</a></div> 
 </article>
 
 
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2022 cactus ball
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/2021/10/21/CO-P1/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            CO-P1
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2021/10/17/Scheme%E5%85%A5%E9%97%A8/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Scheme入门
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
         </div>
     </div>
-  </div>
-</footer>
-    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
     
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Cactus Ball</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-
-<script src="/js/main.js"></script>
+ 
 
 
 
+ 
 
-  </div>
-</body>
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
 </html>
