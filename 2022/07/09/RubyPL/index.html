@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>RubyPL | Cactus Ball</title>
+
+
+    <meta name="keywords" content="Programming Language">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="Ruby Programming Language与Python的异同 字符串可变 可以声明常量 不能直接访问属性（全是private），只能通过方法。 支持mixin 可以改内置类的方法（swift extension？） 只有false和nil为假，其他都是真 数字.method是支持的，方法好像不用带括号  程序结构类1234567891011121314151617181920212223">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RubyPL">
+<meta property="og:url" content="https://cactusballl.github.io/2022/07/09/RubyPL/index.html">
+<meta property="og:site_name" content="Cactus Ball">
+<meta property="og:description" content="Ruby Programming Language与Python的异同 字符串可变 可以声明常量 不能直接访问属性（全是private），只能通过方法。 支持mixin 可以改内置类的方法（swift extension？） 只有false和nil为假，其他都是真 数字.method是支持的，方法好像不用带括号  程序结构类1234567891011121314151617181920212223">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-09T08:47:28.000Z">
+<meta property="article:modified_time" content="2022-07-09T08:48:47.579Z">
+<meta property="article:author" content="cactus ball">
+<meta property="article:tag" content="Programming Language">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">aaicy64&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        RubyPL
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/07/" class="post-meta__date button">2022-07-09</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h1 id="Ruby-Programming-Language"><a href="#Ruby-Programming-Language" class="headerlink" title="Ruby Programming Language"></a>Ruby Programming Language</h1><h2 id="与Python的异同"><a href="#与Python的异同" class="headerlink" title="与Python的异同"></a>与Python的异同</h2><ul>
+<li>字符串可变</li>
+<li>可以声明常量</li>
+<li>不能直接访问属性（全是private），只能通过方法。</li>
+<li>支持mixin</li>
+<li>可以改内置类的方法（swift extension？）</li>
+<li>只有false和nil为假，其他都是真</li>
+<li>数字.method是支持的，方法好像不用带括号</li>
+</ul>
+<h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env ruby</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MegaGreeter</span></span></span><br><span class="line">  <span class="keyword">attr_accessor</span> <span class="symbol">:names</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Create the object</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(names = <span class="string">&quot;World&quot;</span>)</span></span></span><br><span class="line">    <span class="variable">@names</span> = names</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Say hi to everybody</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="variable">@names</span>.<span class="literal">nil</span>?</span><br><span class="line">      puts <span class="string">&quot;...&quot;</span></span><br><span class="line">    <span class="keyword">elsif</span> <span class="variable">@names</span>.respond_to?(<span class="string">&quot;each&quot;</span>)</span><br><span class="line">      <span class="comment"># <span class="doctag">@names</span> is a list of some kind, iterate!</span></span><br><span class="line">      <span class="variable">@names</span>.each <span class="keyword">do</span> <span class="params">|name|</span></span><br><span class="line">        puts <span class="string">&quot;Hello <span class="subst">#&#123;name&#125;</span>!&quot;</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      puts <span class="string">&quot;Hello <span class="subst">#&#123;<span class="variable">@names</span>&#125;</span>!&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Say bye to everybody</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">say_bye</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="variable">@names</span>.<span class="literal">nil</span>?</span><br><span class="line">      puts <span class="string">&quot;...&quot;</span></span><br><span class="line">    <span class="keyword">elsif</span> <span class="variable">@names</span>.respond_to?(<span class="string">&quot;join&quot;</span>)</span><br><span class="line">      <span class="comment"># Join the list elements with commas</span></span><br><span class="line">      puts <span class="string">&quot;Goodbye <span class="subst">#&#123;<span class="variable">@names</span>.join(<span class="string">&quot;, &quot;</span>)&#125;</span>.  Come back soon!&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      puts <span class="string">&quot;Goodbye <span class="subst">#&#123;<span class="variable">@names</span>&#125;</span>.  Come back soon!&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">__FILE__</span> == <span class="variable">$0</span></span><br><span class="line">  mg = MegaGreeter.new</span><br><span class="line">  mg.say_hi</span><br><span class="line">  mg.say_bye</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Change name to be &quot;Zeke&quot;</span></span><br><span class="line">  mg.names = <span class="string">&quot;Zeke&quot;</span></span><br><span class="line">  mg.say_hi</span><br><span class="line">  mg.say_bye</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Change the name to an array of names</span></span><br><span class="line">  mg.names = [<span class="string">&quot;Albert&quot;</span>, <span class="string">&quot;Brenda&quot;</span>, <span class="string">&quot;Charles&quot;</span>,</span><br><span class="line">              <span class="string">&quot;Dave&quot;</span>, <span class="string">&quot;Engelbert&quot;</span>]</span><br><span class="line">  mg.say_hi</span><br><span class="line">  mg.say_bye</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Change to nil</span></span><br><span class="line">  mg.names = <span class="literal">nil</span></span><br><span class="line">  mg.say_hi</span><br><span class="line">  mg.say_bye</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>这是官网上给的例子，基本可以看懂在干啥。</p>
+<p>注意到：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@names</span>.respond_to?(<span class="string">&quot;join&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>动态检查是否存在方法，这个方法名有点Scheme。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@names</span>.each <span class="keyword">do</span> <span class="params">|name|</span></span><br><span class="line">    puts <span class="string">&quot;Hello <span class="subst">#&#123;name&#125;</span>!&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>一个<code>foreach</code>，使用了λ表达式，Ruby称之为Block。</p>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><table>
+<thead>
+<tr>
+<th>Name Begins With</th>
+<th>Variable Scope</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$</code></td>
+<td>A global variable</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>An instance variable</td>
+</tr>
+<tr>
+<td><code>[a-z]</code> or <code>_</code></td>
+<td>A local variable</td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td>A constant</td>
+</tr>
+<tr>
+<td><code>@@</code></td>
+<td>A class variable</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$@</code></td>
+<td>The location of latest error</td>
+</tr>
+<tr>
+<td><code>$_</code></td>
+<td>The string last read by <code>gets</code></td>
+</tr>
+<tr>
+<td><code>$.</code></td>
+<td>The line <em>number</em> last read by interpreter</td>
+</tr>
+<tr>
+<td><code>$&amp;</code></td>
+<td>The string last matched by regexp</td>
+</tr>
+<tr>
+<td><code>$~</code></td>
+<td>The last regexp match, as an array of subexpressions</td>
+</tr>
+<tr>
+<td><code>$</code><em>n</em></td>
+<td>The <em>nth</em> subexpression in the last match (same as <code>$~[</code><em>n</em><code>]</code>)</td>
+</tr>
+<tr>
+<td><code>$=</code></td>
+<td>The case-insensitivity flag</td>
+</tr>
+<tr>
+<td><code>$/</code></td>
+<td>The input record separator</td>
+</tr>
+<tr>
+<td><code>$\</code></td>
+<td>The output record separator</td>
+</tr>
+<tr>
+<td><code>$0</code></td>
+<td>The name of the ruby script file currently executing</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>The command line arguments used to invoke the script</td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>The Ruby interpreter’s process ID</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>The exit status of last executed child process</td>
+</tr>
+</tbody></table>
+<p>一些预定义全局变量，非常的bash。</p>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hash = &#123; <span class="symbol">:leia</span> =&gt; <span class="string">&quot;Princess from Alderaan&quot;</span>, <span class="symbol">:han</span> =&gt; <span class="string">&quot;Rebel without a cause&quot;</span>, <span class="symbol">:luke</span> =&gt; <span class="string">&quot;Farmboy turned Jedi&quot;</span>&#125;</span><br><span class="line">hash.each <span class="keyword">do</span> <span class="params">|key, value|</span></span><br><span class="line">     puts value</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="重定向？"><a href="#重定向？" class="headerlink" title="重定向？"></a>重定向？</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array1 &lt;&lt; array2.pop <span class="keyword">until</span> array2.empty?</span><br></pre></td></tr></table></figure>
+
+<p>把array2的元素全部移到array1。</p>
+<h3 id="后置闭包？"><a href="#后置闭包？" class="headerlink" title="后置闭包？"></a>后置闭包？</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">thing = <span class="string">&quot;Red fish&quot;</span></span><br><span class="line">thing.scan(<span class="regexp">/./</span>) &#123;<span class="params">|letter|</span> puts letter&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一行输出一个字符，输出每个字符。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数会返回最后一个语句的值，和rust一样。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate_value</span><span class="params">(x,y)</span></span></span><br><span class="line">  x + y</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>Note, if you use “return” within a block, you actually will jump out from the function, probably not what you want. To terminate block, use <strong>break</strong>. You can pass a value to break which will be returned as the result of the block:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">six = (<span class="number">1</span>..<span class="number">10</span>).each &#123;<span class="params">|i|</span> <span class="keyword">break</span> i <span class="keyword">if</span> i &gt; <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个语义有点怪。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate_value</span><span class="params">(x,y,*otherValues)</span></span></span><br><span class="line">   puts otherValues</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"> calculate_value(<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>可变参数</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accepts_hash</span><span class="params">( var )</span></span></span><br><span class="line">    print <span class="string">&quot;got: &quot;</span>, var.inspect <span class="comment"># will print out what it received</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  accepts_hash <span class="symbol">:arg1</span> =&gt; <span class="string">&#x27;giving arg1&#x27;</span>, <span class="symbol">:argN</span> =&gt; <span class="string">&#x27;giving argN&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>hash参数</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_method</span><span class="params">(a, b, <span class="symbol">c:</span><span class="literal">true</span>, <span class="symbol">d:</span><span class="literal">false</span>)</span></span> </span><br><span class="line">   puts  a,b,c,d</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>关键词参数。</p>
+<h3 id="Proc-new-和lambda"><a href="#Proc-new-和lambda" class="headerlink" title="Proc.new 和lambda"></a>Proc.new 和lambda</h3><p>lambda行为很正常，Proc.new会有一些奇怪的行为，比如return会从外围函数返回，不检查参数个数等。</p>
+<h3 id="Block和Proc"><a href="#Block和Proc" class="headerlink" title="Block和Proc"></a>Block和Proc</h3><p>Block是词法元素，是字面量（编译时的），Proc是运行时的。</p>
+<p>Block更像函数指针，Proc更像闭包？</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-07-09</p></div> 
+    <div class="post-entry__tags"><a href="/tags/Programming-Language/" class="post-tags__link button"># Programming Language</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/2022/07/09/NLPCourse/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            NLPCourse
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2021/12/06/craft-interpreter/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            craft-interpreter
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Cactus Ball</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
